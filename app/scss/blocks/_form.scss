@@ -12,24 +12,24 @@
 }
 
 .form-label--required::after {
+  content: "*";
   display: inline-block;
   margin-left: 0.2em;
   color: #F44336;
-  content: "*";
 }
 
 .form-control {
-  @include border-rounded();
-  padding: em(14, 18) em(24, 18);
   width: 100%;
+  padding: 10px 15px;
   outline: none;
-  border: 2px solid transparent;
-  background: #edeef1;
-  font: inherit;
-  font-size: rem(18);
+  font-family: inherit;
+  font-size: 15px;
   line-height: normal;
+  background-color: #fff;
+  border: 1px solid $field-border-color;
+  border-radius: 2px;
   box-sizing: border-box;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 textarea.form-control {

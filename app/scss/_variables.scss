@@ -1,7 +1,7 @@
 // Colors
 $base-color: #232020;
 $primary-color: #f16821;
-// $secondary-color: #f16821;
+$secondary-color: #2d3943;
 $accent-color: #3d4954;
 
 $success-color: #71dd5c;
@@ -12,6 +12,11 @@ $danger-color: red;
 $light-color: #e4e4e4;
 $muted-color: #7a7a7a;
 $link-color: #57c;
+
+$color-grey-172: #acacac;
+$color-grey-235: #ebebeb;
+
+$field-border-color: #acacac;
 
 
 // Fonts
@@ -36,3 +41,15 @@ $media-laptop-down: $media-laptop-up - 1;
 
 $media-laptop-l-up: 1280px;
 $media-laptop-l-down: $media-laptop-l-up - 1;
+
+$column-mobile-size: 130px;
+$column-tablet-size: 167px;
+$column-desktop-size: 280px;
+
+// Breakpoints
+$mobile-up: "(min-width: 320px)";
+$mobile-only: "(max-width: 767px)";
+$tablet-up: "(min-width: 768px)";
+$tablet-only: "(max-width: 1279px)";
+$desktop-up: "(min-width: 1280px)";
+$retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";

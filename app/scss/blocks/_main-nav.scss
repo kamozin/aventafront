@@ -1,0 +1,37 @@
+.main-nav {
+
+}
+
+.main-nav__toggle {
+  @include createButton();
+}
+
+.main-nav__toggle-icon {
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.main-nav__list {
+  @include clear-list();
+}
+
+.main-nav__item {
+  font-size: 13px;
+}
+
+.main-nav__link {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  color: $base-color;
+  text-decoration: none;
+  border-bottom: 1px solid $color-grey-235;
+}
+
+.main-nav__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  background-color: #e55;
+}

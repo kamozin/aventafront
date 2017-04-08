@@ -10,8 +10,17 @@
 <body>
   <div class="site-wrapper">
     @@include('blocks/site-header.html')
-    <main class="site-main">
-
+    <main class="main">
+      <div class="sidebar-area">
+        <div class="sidebar">
+          <div class="sidebar__module">
+            @@include('blocks/main-nav.html')
+          </div>
+        </div>
+      </div>
+      <div class="content-area">
+        content-area
+      </div>
     </main>
   </div>
   @@include('blocks/site-footer.html')
