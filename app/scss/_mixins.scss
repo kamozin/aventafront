@@ -25,11 +25,11 @@
   }
 
   @media (min-width: $media-laptop-up) {
-    max-width: 980px;
+    width: 980px;
   }
 
   @media (min-width: $media-laptop-l-up) {
-    max-width: 1200px;
+    width: 1200px;
   }
 }
 

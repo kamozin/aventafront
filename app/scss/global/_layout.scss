@@ -1,0 +1,12 @@
+.main {
+  @include container();
+  display: flex;
+}
+
+.sidebar-area {
+  width: $column-desktop-size;
+}
+
+.content-area {
+
+}

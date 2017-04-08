@@ -15,18 +15,27 @@
 }
 
 .searchbar__input {
-  width: 100%;
+  min-width: 300px;
+  border-radius: 3px 0 0 3px;
 }
 
 .searchbar__select {
-
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
 }
 
 .searchbar__submit {
-  @include createButton();
-  @include buttonColor($accent-color, #fff);
+  padding: 9px;
+  min-width: auto;
+  font-size: 0;
+  border-radius: 0 3px 3px 0;
 }
 
 .seacrhbar__submit-icon {
-
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  fill: currentColor;
+  background-color: #5df;
 }
