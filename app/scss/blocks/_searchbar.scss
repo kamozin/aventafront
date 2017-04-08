@@ -1,0 +1,32 @@
+.searchbar {
+  display: flex;
+}
+
+.searchbar__input-holder {
+
+}
+
+.searchbar__select-holder {
+
+}
+
+.searchbar__submit-holder {
+
+}
+
+.searchbar__input {
+  width: 100%;
+}
+
+.searchbar__select {
+
+}
+
+.searchbar__submit {
+  @include createButton();
+  @include buttonColor($accent-color, #fff);
+}
+
+.seacrhbar__submit-icon {
+
+}

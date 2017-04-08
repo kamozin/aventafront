@@ -1,0 +1,11 @@
+.site-header {
+  background-color: #f16821;
+}
+
+.site-header__inner {
+  @include container();
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

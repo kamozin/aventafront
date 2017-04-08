@@ -1,0 +1,34 @@
+.user-nav {
+
+}
+
+.user-nav__list {
+  @include clear-list();
+
+  display: flex;
+}
+
+.user-nav__item {
+
+}
+
+.user-nav__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(#000, 0.5);
+  }
+}
+
+.user-nav__icon {
+  width: 32px;
+  height: 32px;
+  margin: 0.5em;
+  fill: currentColor;
+  background-color: #5df;
+}

@@ -1,0 +1,25 @@
+.topbar {
+  background-color: #2d3943;
+  color: #fff;
+}
+
+.topbar__inner {
+  @include container();
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar__phone {
+  display: inline-flex;
+  align-items: center;
+}
+
+.topbar__phone-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5em;
+  fill: currentColor;
+  background-color: #5df;
+}

@@ -1,0 +1,87 @@
+<div class="topbar">
+  <div class="topbar__inner">
+    <nav class="topbar__user-nav user-nav">
+      <ul class="user-nav__list">
+        <li class="user-nav__item">
+          <a class="user-nav__link" href="#">
+            <svg class="user-nav__icon" width="32" height="32">
+              <use xlink:href=""></use>
+            </svg>
+            Войти
+          </a>
+        </li>
+        <li class="user-nav__item">
+          <a class="user-nav__link" href="#">
+            <svg class="user-nav__icon" width="32" height="32">
+              <use xlink:href=""></use>
+            </svg>
+            Регистрация
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="topbar__user-nav top-nav">
+      <ul class="top-nav__list">
+        <li class="top-nav__item">
+          <a class="top-nav__link" href="#">
+            Доставка
+          </a>
+        </li>
+        <li class="top-nav__item">
+          <a class="top-nav__link" href="#">
+            Оплата
+          </a>
+        </li>
+        <li class="top-nav__item">
+          <a class="top-nav__link" href="#">
+            Акции
+          </a>
+        </li>
+        <li class="top-nav__item">
+          <a class="top-nav__link" href="#">
+            Контакты
+          </a>
+        </li>
+      </ul>
+      <a class="top-nav__cart" href="#">
+        <svg class="top-nav__cart-icon" width="32" height="32">
+          <use xlink:href=""></use>
+        </svg>
+        Корзина (<span class="top-nav__cart-counter">0</span>)
+      </a>
+    </nav>
+    <a class="topbar__phone" href="tel:+7(4832)220-380">
+      <svg class="topbar__phone-icon" width="32" height="32">
+        <use xlink:href=""></use>
+      </svg>
+      (4832) 220-380
+    </a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="site-header__logo">
+      <a class="site-header__logo-link" href="#">
+        <img class="site-header__logo-image" src="//placehold.it/290x70" alt="">
+      </a>
+    </div>
+
+    <form class="site-header__searchbar searchbar" action="" method="post">
+      <input type="text" class="searchbar__input" name="q" placeholder="Я ищу…">
+      <select name="" id="" class="searchbar__select">
+        <option value="all" selected>Все категории</option>
+        <option value="cat_1">Категория 1</option>
+        <option value="cat_2">Категория 2</option>
+      </select>
+      <button class="searchbar__submit" type="submit">
+        <svg class="seacrhbar__submit-icon" width="32" height="32">
+          <use xlink:href=""></use>
+        </svg>
+        Поиск
+      </button>
+    </form>
+
+    <a class="site-header__trigger-callback button js-trigger-inline-popup" href="#popup-callback">Заказать звонок</a>
+  </div>
+</header>
