@@ -13,7 +13,6 @@
 .content-area {
   width: calc(100% - #{$column-desktop + $gutter-desktop});
   flex-grow: 1;
-  // background-color: #8db;
 }
 
 .content {
