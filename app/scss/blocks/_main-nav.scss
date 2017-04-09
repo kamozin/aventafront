@@ -1,11 +1,15 @@
 .main-nav {
   position: relative;
   z-index: 2;
+  padding-top: 15px;
   background-color: #fafafa;
+  text-align: center;
 }
 
 .main-nav__toggle {
   @include createButton();
+
+  margin-bottom: 15px;
 }
 
 .main-nav__toggle-icon {
@@ -15,6 +19,8 @@
 
 .main-nav__list {
   @include clear-list();
+
+  text-align: left;
 }
 
 .main-nav__item {
