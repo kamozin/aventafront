@@ -1,0 +1,93 @@
+.product-card {
+
+}
+
+.product-card__inner {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.product-card__image-frame {
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.product-card__image-holder {
+  @include fitObject(260, 170);
+}
+
+.product-card__image {
+
+}
+
+.product-card__info {
+
+}
+
+.product-card__title {
+  height: 36px;
+  min-height: 36px;
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  overflow: hidden;
+
+  a {
+    display: block;
+    color: currentColor;
+    text-decoration: none;
+  }
+}
+
+.product-card:hover .product-card__title {
+  // height: auto;
+}
+
+.product-card__status {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.product-card__buying {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.product-card__price {
+  flex-grow: 1;
+  font-size: 21px;
+  color: $primary-color;
+
+  &::after {
+    content: "₽";
+    font-size: 0.85em;
+    color: $base-color;
+  }
+
+  &--old {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 16px;
+    text-decoration: line-through;
+    color: $muted-color;
+
+    &::after {
+      color: $muted-color;
+    }
+  }
+}
+
+.product-card__price-currency {
+  display: none;
+}
+
+.product-card__footer {
+  text-align: center;
+}

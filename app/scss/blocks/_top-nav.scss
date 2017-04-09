@@ -1,6 +1,6 @@
 .top-nav {
   display: flex;
-  align-items: center;
+  // align-items: center;
 }
 
 .top-nav__list {
@@ -10,15 +10,19 @@
 }
 
 .top-nav__item {
-
+  display: flex;
+  flex-direction: column;
 }
 
 .top-nav__link {
   display: inline-flex;
   align-items: center;
+  flex-grow: 1;
   padding: 10px;
-  color: #fff;
+  font-size: 13px;
   text-decoration: none;
+  color: #fff;
+  transition: $transition-duration;
 
   &:hover,
   &:focus {
@@ -31,18 +35,21 @@
   display: inline-flex;
   align-items: center;
   padding: 10px;
+  font-size: $fonr-size--small;
   color: #fff;
+  transition: $transition-duration;
 
   &:hover,
   &:focus {
+    color: #fff;
     background-color: rgba(#000, 0.5);
   }
 }
 
 .top-nav__cart-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0.5em;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5em;
   fill: currentColor;
   background-color: #5df;
 }
