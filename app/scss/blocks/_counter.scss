@@ -1,0 +1,23 @@
+.counter {
+  display: inline-flex;
+}
+
+.counter__input {
+  text-align: center;
+  max-width: 40px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none !important;
+    margin: 0 !important;
+    -moz-appearance: textfield !important;
+  }
+}
+
+.counter__control {
+  padding: 10px;
+  color: #fff;
+  font-size: 17px;
+  background-color: $color-grey-172;
+  border: none;
+}

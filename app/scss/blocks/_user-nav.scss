@@ -16,8 +16,10 @@
   display: inline-flex;
   align-items: center;
   padding: 10px;
+  font-size: $fonr-size--small;
   color: #fff;
   text-decoration: none;
+  transition: $transition-duration;
 
   &:hover,
   &:focus {
@@ -27,9 +29,9 @@
 }
 
 .user-nav__icon {
-  width: 32px;
-  height: 32px;
-  margin: 0.5em;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5em;
   fill: currentColor;
   background-color: #5df;
 }

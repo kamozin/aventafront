@@ -21,15 +21,11 @@
   }
 
   @media (min-width: $media-tablet-up) {
-
+    // max-width: 720px;
   }
 
   @media (min-width: $media-laptop-up) {
-    width: 980px;
-  }
-
-  @media (min-width: $media-laptop-l-up) {
-    width: 1200px;
+    max-width: 1200px;
   }
 }
 

@@ -4,9 +4,17 @@
 }
 
 .sidebar-area {
-  width: $column-desktop-size;
+  width: $column-desktop;
+  flex-shrink: 0;
+  background-color: #FAFAFA;
+  margin-right: $gutter-desktop;
 }
 
 .content-area {
+  width: calc(100% - #{$column-desktop + $gutter-desktop});
+  flex-grow: 1;
+  // background-color: #8db;
+}
 
+.content {
 }
