@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 100%;
-  background-color: #fff;
+  background-color: #fafafa;
 }
 
 .main-subnav__list {
@@ -16,4 +16,12 @@
 .main-subnav__link {
   display: block;
   padding: 10px;
+  font-size: 13px;
+  color: $muted-color;
+  transition: $transition-duration;
+}
+
+.main-subnav__item:hover .main-subnav__link {
+  color: #111;
+  background-color: #fff;
 }
