@@ -1,5 +1,6 @@
 .main-nav {
-
+  position: relative;
+  z-index: 2;
 }
 
 .main-nav__toggle {
@@ -17,6 +18,7 @@
 
 .main-nav__item {
   font-size: 13px;
+  position: relative;
 }
 
 .main-nav__link {
@@ -34,4 +36,20 @@
   height: 24px;
   margin-right: 10px;
   background-color: #e55;
+}
+
+
+.main-nav__drop {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px) scale(0.9);
+  transform-origin: 0 50%;
+  transition: opacity 0.25s, transform 0.25s, visibility 0s 0.25s;
+}
+
+.main-nav__item:hover .main-nav__drop {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.25s, transform 0.25s;
 }
