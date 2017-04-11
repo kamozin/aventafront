@@ -1,16 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
   svg4everybody(); // run it now or whenever you are ready
 
+  var main = document.querySelector('.main');
+  var mainNav = document.querySelector('.main-nav');
+
+  mainNav.addEventListener('mouseover', toggleMainNavOverlay);
+  mainNav.addEventListener('mouseout', toggleMainNavOverlay);
+
+  function toggleMainNavOverlay() {
+    main.classList.toggle('main--overlay');
+  }
+
   /*=================================
   =            Billboard            =
   =================================*/
 
   var billboardSlider = document.querySelector('.billboard__slider');
+
   if (billboardSlider) {
     $(billboardSlider).slick({
       accessibility: false,
       // autoplay: true,
-      // arrows: false
     });
   }
 

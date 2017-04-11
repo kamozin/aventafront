@@ -1,0 +1,61 @@
+.product {
+
+}
+
+.product__columns-grid {
+
+}
+
+.product__column {
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media #{$tablet-up} {
+    margin-bottom: 0;
+  }
+}
+
+.product__image-holder {
+  @include fitObject(400, 260);
+}
+
+.product__info {
+
+}
+
+.product__info-item {
+  margin-bottom: 15px;
+}
+
+.product__price {
+
+  &--old {
+
+  }
+}
+
+.product__price-value {
+  font-size: 21px;
+  color: $primary-color;
+
+  &::after {
+    content: "₽";
+    font-size: 0.85em;
+    color: $base-color;
+  }
+}
+
+.product__price-currency {
+  font-size: 0;
+}
+
+.product__text {
+  margin-top: 50px;
+
+  td:first-child {
+    // width: 25%;
+  }
+}

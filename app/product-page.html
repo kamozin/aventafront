@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Страница проудукта</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    @@include('blocks/site-header.html')
+    <!-- main--overlay — показывает оверлей при наведении на main-nav__list -->
+    <main class="main">
+      <div class="main__container">
+        <div class="sidebar-area">
+          <div class="sidebar">
+            <div class="sidebar__module">
+              @@include('blocks/main-nav.html')
+            </div>
+          </div>
+        </div>
+        <div class="content-area">
+          <div class="content product">
+            <h1 class="product__title">Изолятор керамический Villaris коричневый, V&nbsp;2000002</h1>
+
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Главная</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Далеко-далеко за словесными горами в стране.</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link">Далеко-далеко за словесными горами в стране.</a>
+              </li>
+            </ul>
+
+            <div class="product__columns-grid grid-columns">
+              <div class="product__column col-tablet-up-5 col-laptop-up-6">
+                <div class="product__image-holder">
+                  <img class="product__image" src="//placehold.it/400x262/098/fff" alt="" />
+                </div>
+              </div>
+              <div class="product__column col-tablet-up-7 col-laptop-up-6">
+                <div class="product__info">
+                  <div class="product__info-item">
+                    <div class="product__status">
+                      Наличие: Более 100 шт
+                    </div>
+                  </div>
+                  <div class="product__info-item">
+                    <div class="product__articule">
+                      Артикул: 34564545
+                    </div>
+                  </div>
+                  <div class="product__info-item">
+                    <div class="product__price">
+                      <span class="product__price-text">
+                        Цена:
+                      </span>
+                      <span class="product__price-value">
+                        2 655.80 <span class="product__price-currency">руб.</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="product__info-item">
+                    <div class="product__counter counter">
+                      <button class="counter__control counter__control--down" type="button">-</button>
+                      <input class="counter__input" type="number" name="" id="" value="1" />
+                      <button class="counter__control counter__control--up" type="button">+</button>
+                    </div>
+                    <button class="product__button button-orange" type="submit">Добавить в корзину</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product__text">
+              <h2>Основные характеристики</h2>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Тип подсветки матрицы</td>
+                    <td>Edge LED</td>
+                  </tr>
+                  <tr>
+                    <td>Диагональ экрана</td>
+                    <td>19" (48 см)</td>
+                  </tr>
+                  <tr>
+                    <td>Разрешение экрана</td>
+                    <td>1366x768 (HD)</td>
+                  </tr>
+                  <tr>
+                    <td>Частота обновления экрана </td>
+                    <td>50 Гц</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  @@include('blocks/site-footer.html')
+</body>
+</html>
