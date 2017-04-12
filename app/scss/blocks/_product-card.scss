@@ -75,6 +75,16 @@
 
 .product-card__price {
   flex-grow: 1;
+
+
+  &--old {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+  }
+}
+
+.product-card__price-value {
   font-size: 21px;
   color: $primary-color;
 
@@ -83,23 +93,20 @@
     font-size: 0.85em;
     color: $base-color;
   }
+}
 
-  &--old {
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    font-size: 16px;
-    text-decoration: line-through;
+.product-card__price--old .product-card__price-value {
+  font-size: 16px;
+  color: $muted-color;
+  text-decoration: line-through;
+
+  &::after {
     color: $muted-color;
-
-    &::after {
-      color: $muted-color;
-    }
   }
 }
 
 .product-card__price-currency {
-  display: none;
+  font-size: 0;
 }
 
 .product-card__footer {
