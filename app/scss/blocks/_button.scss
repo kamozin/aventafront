@@ -11,14 +11,12 @@
   text-decoration: none;
   line-height: normal;
   outline: none;
-  text-align: center;
   border: 1px solid transparent;
   border-radius: 2px;
   box-sizing: border-box;
   user-select: none;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-
+  transition: background-color $transition-duration, color $transition-duration;
 }
 
 // .button {
