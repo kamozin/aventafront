@@ -23,6 +23,17 @@ $field-border-color: #acacac;
 $transition-duration: 0.2s;
 
 
+// Hamburgers
+$hamburger-types: (slider);
+$hamburger-layer-width: 20px;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 4.5px;
+$hamburger-layer-color: currentColor;
+$hamburger-layer-border-radius: 0;
+$hamburger-hover-opacity: 1;
+$hamburger-hover-transition-timing-function: ease;
+
+
 // Fonts
 $font-size: 15px;
 $fonr-size--small: 12px;
