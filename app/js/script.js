@@ -22,6 +22,45 @@ document.addEventListener('DOMContentLoaded', function() {
     mainNavToogle.classList.toggle('is-active');
   });
 
+
+  /*================================================
+  =            Catalog filter accordion            =
+  ================================================*/
+
+  var $catalogFilter = $('#catalog-filter');
+
+  if ($catalogFilter.length) {
+    $catalogFilter.collapse({
+      query: ".catalog-filter__caption",
+      persist: true
+    });
+  }
+
+  /*=====  End of Catalog filter accordion  ======*/
+
+
+
+/*===========================================
+=            Filter range slider            =
+===========================================*/
+
+var slider = document.querySelector('.filter-interval__slider');
+
+if (slider) {
+  noUiSlider.create(slider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 100
+    }
+  });
+}
+
+/*=====  End of Filter range slider  ======*/
+
+
+
   /*=================================
   =            Billboard            =
   =================================*/

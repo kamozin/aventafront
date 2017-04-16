@@ -23,11 +23,13 @@
 .main-nav__list {
   @include clear-list();
 
+  position: absolute;
   transform-origin: 50% 0;
   transform: scale(0.85);
+  text-align: left;
   opacity: 0;
   visibility: hidden;
-  text-align: left;
+  background-color: #fff;
   transition: opacity $transition-duration, transform $transition-duration, visibility 0s $transition-duration;
 }
 
@@ -51,7 +53,6 @@
   color: $base-color;
   color: $muted-color;
   text-decoration: none;
-  // background-color: #fff;
   border-bottom: 1px solid $color-grey-235;
   transition: $transition-duration;
 
@@ -95,7 +96,7 @@
   visibility: hidden;
   transform: translateX(-10px) scale(0.9);
   transform-origin: 0 0;
-  transition: opacity 0.25s, transform 0.25s, visibility 0s 0.25s;
+  transition: opacity $transition-duration, transform $transition-duration, visibility 0s $transition-duration;
 }
 
 .main-nav__item:hover .main-nav__drop {
