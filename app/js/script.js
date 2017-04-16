@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
 ===========================================*/
 
 var slider = document.querySelector('.filter-interval__slider');
+var inputMin = document.querySelector('#input-min');
+var inputMax = document.querySelector('#input-max');
+var inputs = [inputMin, inputMax];
 
 if (slider) {
   noUiSlider.create(slider, {
@@ -54,6 +57,16 @@ if (slider) {
       'min': 0,
       'max': 100
     }
+  });
+
+  slider.noUiSlider.on('update', function(values, handle) {
+    inputs[handle].value = values[handle];
+  });
+
+  inputs.forEach(function(input) {
+    input.addEventListener('change', function(){
+      slider.noUiSlider.set([null, this.value]);
+    });
   });
 }
 

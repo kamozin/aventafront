@@ -1,11 +1,12 @@
 <div class="catalog-filter" id="catalog-filter">
   <div class="catalog-filter__item">
-    <h3 class="catalog-filter__caption">Цена, р.</h3>
+    <h3 class="catalog-filter__caption open">Цена, р.</h3>
     <div class="catalog-filter__inputs">
       <div class="filter-interval">
         <div class="filter-interval__group-inputs">
-          <input type="text" class="filter-interval__input form-control" /> <span class="filter-interval__group-space">—</span>
-          <input type="text" class="filter-interval__input form-control" />
+          <input class="filter-interval__input form-control" id="input-min" type="text"/>
+          <span class="filter-interval__group-space">—</span>
+          <input class="filter-interval__input form-control" id="input-max" type="text" />
         </div>
         <div class="filter-interval__slider"></div>
       </div>
