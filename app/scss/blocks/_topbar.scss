@@ -1,4 +1,6 @@
 .topbar {
+  position: relative;
+  z-index: 2;
   background-color: $secondary-color;
   color: #fff;
 }

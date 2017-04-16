@@ -1,0 +1,55 @@
+.catalog-filter {
+}
+
+.catalog-filter__item {
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.catalog-filter__caption {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+
+  a {
+    position: relative;
+    display: block;
+    padding: 8px 15px;
+    padding-right: 35px;
+    color: $base-color;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $color-grey-235;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 15px;
+      width: 10px;
+      height: 10px;
+      margin: auto;
+      border: 1px solid;
+      box-sizing: border-box;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+      transition: 0.25s;
+    }
+  }
+}
+
+.catalog-filter__caption.open {
+  a {
+    &::before {
+      transform: rotate(225deg);
+    }
+  }
+}
+
+.catalog-filter__inputs {
+  padding: 8px 15px;
+}
