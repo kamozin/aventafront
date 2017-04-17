@@ -31,8 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if ($catalogFilter.length) {
     $catalogFilter.collapse({
-      query: ".catalog-filter__caption",
-      persist: true
+      query: ".catalog-filter__caption"
     });
   }
 
@@ -44,28 +43,35 @@ document.addEventListener('DOMContentLoaded', function() {
 =            Filter range slider            =
 ===========================================*/
 
-var slider = document.querySelector('.filter-interval__slider');
-var inputMin = document.querySelector('#input-min');
-var inputMax = document.querySelector('#input-max');
-var inputs = [inputMin, inputMax];
 
-if (slider) {
-  noUiSlider.create(slider, {
-    start: [20, 80],
-    connect: true,
-    range: {
-      'min': 0,
-      'max': 100
-    }
-  });
+var filterIntervalItems = document.querySelectorAll('.filter-interval');
 
-  slider.noUiSlider.on('update', function(values, handle) {
-    inputs[handle].value = values[handle];
-  });
+if (filterIntervalItems.length) {
+  Array.prototype.forEach.call(filterIntervalItems, function(filterInterval) {
+    var slider = filterInterval.querySelector('.filter-interval__slider');
+    var inputMin = filterInterval.querySelector('.filter-interval__input--min');
+    var inputMax = filterInterval.querySelector('.filter-interval__input--max');
+    var inputs = [inputMin, inputMax];
 
-  inputs.forEach(function(input) {
-    input.addEventListener('change', function(){
-      slider.noUiSlider.set([null, this.value]);
+    console.log(inputs)
+
+    noUiSlider.create(slider, {
+      start: [inputMin.value, inputMax.value],
+      connect: true,
+      range: {
+        'min': parseFloat(inputMin.value),
+        'max': parseFloat(inputMax.value)
+      }
+    });
+
+    slider.noUiSlider.on('update', function(values, handle) {
+      inputs[handle].value = values[handle];
+    });
+
+    inputs.forEach(function(input) {
+      input.addEventListener('input', function(){
+        slider.noUiSlider.set([null, this.value]);
+      });
     });
   });
 }
