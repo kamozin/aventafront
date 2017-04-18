@@ -3,9 +3,7 @@
 }
 
 .catalog-filter__item {
-  margin-bottom: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid $color-grey-235;
+  // border-bottom: 1px solid $color-grey-235;
 
   &:last-child {
     margin-bottom: 0;
@@ -21,9 +19,12 @@
   a {
     position: relative;
     display: block;
-    padding: 8px 15px;
+    padding: 12px 15px;
     padding-right: 35px;
     color: $base-color;
+    border-top: none;
+    border: 1px solid transparent;
+    border-bottom-color: $color-grey-235;
     transition: 0.25s;
 
     &:hover {
@@ -51,12 +52,34 @@
 
 .catalog-filter__caption.open {
   a {
+    border-color: $color-grey-235;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
     &::before {
-      transform: rotate(225deg);
+      transform: rotate(45deg) scale(-1);
     }
   }
 }
 
 .catalog-filter__inputs {
   padding: 8px 15px;
+  padding-bottom: 20px;
+  border: 1px solid transparent;
+  border-top: none;
+}
+
+.catalog-filter__checkbox {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.catalog-filter__radio {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.catalog-filter__caption.open + .catalog-filter__inputs {
+  border-color: $color-grey-235;
 }

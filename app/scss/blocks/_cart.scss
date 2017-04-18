@@ -1,0 +1,44 @@
+.cart {
+
+}
+
+.cart__items {
+  td {
+    padding: 10px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.cart__item-image {
+
+}
+
+.cart__item-title {
+  max-width: 320px;
+  font-weight: 600;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.cart__item-price {
+  white-space: nowrap;
+}
+
+.cart__item-summary-price {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cart__item-counter {
+  text-align: center;
+}
+
+.cart__item-delete {
+
+}

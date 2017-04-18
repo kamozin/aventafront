@@ -4,9 +4,22 @@
     <div class="catalog-filter__inputs">
       <div class="filter-interval">
         <div class="filter-interval__group-inputs">
-          <input class="filter-interval__input form-control" id="input-min" type="text"/>
+          <input class="filter-interval__input filter-interval__input--min form-control" id="input-min" type="text" name="minValue" value="2000" />
           <span class="filter-interval__group-space">—</span>
-          <input class="filter-interval__input form-control" id="input-max" type="text" />
+          <input class="filter-interval__input filter-interval__input--max form-control" id="input-max" type="text" name="maxValue" value="7500" />
+        </div>
+        <div class="filter-interval__slider"></div>
+      </div>
+    </div>
+  </div>
+  <div class="catalog-filter__item">
+    <h3 class="catalog-filter__caption open">Вес, кг.</h3>
+    <div class="catalog-filter__inputs">
+      <div class="filter-interval">
+        <div class="filter-interval__group-inputs">
+          <input class="filter-interval__input filter-interval__input--min form-control" id="input-min" type="text" name="minValue" value="0.2" />
+          <span class="filter-interval__group-space">—</span>
+          <input class="filter-interval__input filter-interval__input--max form-control" id="input-max" type="text" name="maxValue" value="2.86" />
         </div>
         <div class="filter-interval__slider"></div>
       </div>
@@ -15,22 +28,22 @@
   <div class="catalog-filter__item">
     <h3 class="catalog-filter__caption">Производитель</h3>
     <div class="catalog-filter__inputs">
-      <label class="custom-checkbox">
+      <label class="catalog-filter__checkbox custom-checkbox">
         <input type="checkbox" name="" id="" />
         <span class="custom-checkbox__indicator"></span>
         <span class="custom-checkbox__text">AIWA</span>
       </label>
-      <label class="custom-checkbox">
+      <label class="catalog-filter__checkbox custom-checkbox">
         <input type="checkbox" name="" id="" />
         <span class="custom-checkbox__indicator"></span>
         <span class="custom-checkbox__text">AKAI</span>
       </label>
-      <label class="custom-checkbox">
+      <label class="catalog-filter__checkbox custom-checkbox">
         <input type="checkbox" name="" id="" />
         <span class="custom-checkbox__indicator"></span>
         <span class="custom-checkbox__text">Arika</span>
       </label>
-      <label class="custom-checkbox">
+      <label class="catalog-filter__checkbox custom-checkbox">
         <input type="checkbox" name="" id="" />
         <span class="custom-checkbox__indicator"></span>
         <span class="custom-checkbox__text">Daewod</span>
@@ -40,12 +53,12 @@
   <div class="catalog-filter__item">
     <h3 class="catalog-filter__caption">Толщина</h3>
     <div class="catalog-filter__inputs">
-      <label class="custom-radio">
+      <label class="catalog-filter__radio custom-radio">
         <input type="radio" name="color" id="" />
         <span class="custom-radio__indicator"></span>
         <span class="custom-radio__text">2 см</span>
       </label>
-      <label class="custom-radio">
+      <label class="catalog-filter__radio custom-radio">
         <input type="radio" name="color" id="" />
         <span class="custom-radio__indicator"></span>
         <span class="custom-radio__text">4 см</span>
