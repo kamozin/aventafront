@@ -1,11 +1,15 @@
 .form-item {
-  margin-bottom: rem(15);
-  display: block;
+  margin-bottom: 15px;
+  // display: block;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .form-label {
   display: inline-block;
-  padding-bottom: 0.3em;
+  padding-bottom: 5px;
   vertical-align: middle;
   font-size: 0.95rem;
   cursor: pointer;
@@ -15,7 +19,7 @@
   content: "*";
   display: inline-block;
   margin-left: 0.2em;
-  color: #F44336;
+  color: #f44336;
 }
 
 .form-control {
@@ -30,20 +34,25 @@
   border-radius: 2px;
   box-sizing: border-box;
   transition: 0.25s;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+
+  &:focus {
+    border-color: $field-border-color--hover;
+    background: #fff;
+  }
+
+  &::placeholder {
+    color: $muted-color;
+    opacity: 0.75;
+  }
 }
 
 textarea.form-control {
   max-height: 200px;
   resize: vertical;
-}
-
-.form-control:hover {
-  background: #f9f9f9;
-}
-
-.form-control:focus {
-  border-color: mix(#000, #e3e3e1, 7%);
-  background: #fff;
 }
 
 .form-submit-wrapper {
@@ -52,8 +61,9 @@ textarea.form-control {
 }
 
 .form-note {
-  margin-top: rem(15);
-  font-size: rem(15.5);
+  margin-top: 15px;
+  font-size: 14px;
+
   p {
     margin-bottom: 0;
   }

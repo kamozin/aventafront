@@ -1,0 +1,40 @@
+.checkout-form {
+
+}
+
+.checkout-form__section {
+  margin: 0;
+  margin-bottom: ($grid-gutter * 2px);
+  padding: 0;
+  padding-bottom: ($grid-gutter * 2px);
+  border: none;
+  border-bottom: 1px solid $light-color;
+
+  &:last-of-type {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.checkout-form__item {
+  align-items: flex-start;
+}
+
+.checkout-form__label {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+.checkout-form__checkbox {
+  font-size: $fonr-size--small;
+}
+
+.checkout-form__submit-wrapper {
+  margin-top: ($grid-gutter * 4px);
+  text-align: right;
+}
+
+.checkout-form__submit {
+
+}

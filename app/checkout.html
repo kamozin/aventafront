@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Корзина</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    @@include('blocks/site-header.html')
+    <main class="main">
+      <div class="main__container">
+        <div class="content-area">
+          <div class="content">
+            <h1 class="page-title">Оформление заказа</h1>
+            <div class="checkout row">
+              <div class="col-tablet-up-7">
+                <div class="page-block">
+                  <h2 class="checkout__block-title">Платежная информация</h2>
+                  <form class="checkout-form" action="" method="post">
+                    <fieldset class="checkout-form__section">
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">Имя, Фамилия получателя:</span>
+                        <div class="col-mobile-up-7">
+                          <input type="text" class="form-control" placeholder="Иван Иванов" required />
+                        </div>
+                      </label>
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">Телефон:</span>
+                        <div class="col-mobile-up-7">
+                          <input type="tel" class="form-control" placeholder="+7 (___) ___-__-__" required />
+                        </div>
+                      </label>
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">E-mail:</span>
+                        <div class="col-mobile-up-7">
+                          <input type="email" class="form-control" placeholder="ivan-ivanov@mail.ru" required />
+                        </div>
+                      </label>
+                    </fieldset>
+                    <fieldset class="checkout-form__section">
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">Способ доставки:</span>
+                        <div class="col-mobile-up-7">
+                          <div class="custom-select">
+                            <select class="form-control" name="" id="">
+                              <option value="1">1</option>
+                            </select>
+                          </div>
+                        </div>
+                      </label>
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">Форма оплаты:</span>
+                        <div class="col-mobile-up-7">
+                          <div class="custom-select">
+                            <select class="form-control" name="" id="">
+                              <option value="1">1</option>
+                            </select>
+                          </div>
+                        </div>
+                      </label>
+                    </fieldset>
+                    <fieldset class="checkout-form__section">
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">Область:</span>
+                        <div class="col-mobile-up-7">
+                          <input type="text" class="form-control" placeholder="Брянская" required />
+                        </div>
+                      </label>
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">Город:</span>
+                        <div class="col-mobile-up-7">
+                          <input type="text" class="form-control" placeholder="Брянск" required />
+                        </div>
+                      </label>
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">Адрес:</span>
+                        <div class="col-mobile-up-7">
+                          <input type="text" class="form-control" placeholder="ул. Нахимова, д. 14, офис 37" required />
+                        </div>
+                      </label>
+                    </fieldset>
+                    <fieldset class="checkout-form__section">
+                      <label class="checkout-form__item form-item row">
+                        <span class="checkout-form__label form-label col-mobile-up-5">Комментарий по доставке:</span>
+                        <div class="col-mobile-up-7">
+                          <textarea class="form-control" name="" id="" rows="5" placeholder="Время доставки с 18:00"></textarea></div>
+                        </label>
+                      </fieldset>
+                      <div class="checkout-form__item form-item">
+                        <label class="checkout-form__checkbox custom-checkbox">
+                          <input type="checkbox" name="" id="" checked />
+                          <span class="custom-checkbox__indicator"></span>
+                          <span class="custom-checkbox__text">Я соглашаюсь с условиями политики конфиденциальности компании</span>
+                        </label>
+                      </div>
+                      <div class="checkout-form__submit-wrapper">
+                        <button class="checkout-form__submit button-orange" type="submit">Оформить заказ</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-tablet-up-5">
+                  <div class="page-block">
+                    <h2 class="checkout__block-title">Ваш заказ</h2>
+                    <table class="checkout__summary">
+                      <tbody>
+                        <tr class="checkout__summary-item">
+                          <td class="checkout__summary-field">Товаров в корзине:</td>
+                          <td class="checkout__summary-value">3</td>
+                        </tr>
+                        <tr class="checkout__summary-item">
+                          <td class="checkout__summary-field">Доставка: Самовывоз</td>
+                          <td class="checkout__summary-value">0 р.</td>
+                        </tr>
+                        <tr class="checkout__summary-item">
+                          <td class="checkout__summary-field">Скидка:</td>
+                          <td class="checkout__summary-value">3 843.19 р.</td>
+                        </tr>
+                        <tr class="checkout__summary-item checkout__summary-item--primary">
+                          <td class="checkout__summary-field">Итого:</td>
+                          <td class="checkout__summary-value">48 039.94 р.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    @@include('blocks/site-footer.html')
+  </body>
+  </html>
