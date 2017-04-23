@@ -1,0 +1,33 @@
+.checkout {
+
+}
+
+.checkout__block-title {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.checkout__summary {
+  margin: 0;
+}
+
+.checkout__summary-item {
+
+  td {
+    padding: ($grid-gutter * 1px);
+  }
+}
+
+.checkout__summary-field {
+  padding-left: 0;
+}
+
+.checkout__summary-value {
+  font-weight: 700;
+  text-align: right;
+}
+
+.checkout__summary-item--primary .checkout__summary-value {
+  font-size: 1.15em;
+  color: $primary-color;
+}

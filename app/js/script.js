@@ -3,24 +3,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var main = document.querySelector('.main');
   var mainNav = document.querySelector('.main-nav');
-  var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
-  var mainNavList = mainNav.querySelector('.main-nav__list');
 
-  mainNav.addEventListener('mouseover', toggleMainNavOverlay);
-  mainNav.addEventListener('mouseout', toggleMainNavOverlay);
+  if (mainNav) {
+    var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
+    var mainNavList = mainNav.querySelector('.main-nav__list');
 
-  function toggleMainNavOverlay(event) {
-    if (mainNav.classList.contains('main-nav--opened')) {
-      main.classList.toggle('main--overlay');
+    mainNav.addEventListener('mouseover', toggleMainNavOverlay);
+    mainNav.addEventListener('mouseout', toggleMainNavOverlay);
+
+    function toggleMainNavOverlay(event) {
+      if (mainNav.classList.contains('main-nav--opened')) {
+        main.classList.toggle('main--overlay');
+      }
     }
+
+    mainNavToogle.addEventListener('click', function(event) {
+      event.preventDefault();
+      mainNav.classList.toggle('main-nav--opened');
+      main.classList.toggle('main--overlay');
+      mainNavToogle.classList.toggle('is-active');
+    });
   }
 
-  mainNavToogle.addEventListener('click', function(event) {
-    event.preventDefault();
-    mainNav.classList.toggle('main-nav--opened');
-    main.classList.toggle('main--overlay');
-    mainNavToogle.classList.toggle('is-active');
-  });
 
 
   /*================================================
@@ -53,7 +57,11 @@ if (filterIntervalItems.length) {
     var inputMax = filterInterval.querySelector('.filter-interval__input--max');
     var inputs = [inputMin, inputMax];
 
-    console.log(inputs)
+    function setSliderHandle(i, value) {
+      var r = [null,null];
+      r[i] = value;
+      slider.noUiSlider.set(r);
+    }
 
     noUiSlider.create(slider, {
       start: [inputMin.value, inputMax.value],
@@ -68,13 +76,16 @@ if (filterIntervalItems.length) {
       inputs[handle].value = values[handle];
     });
 
-    inputs.forEach(function(input) {
-      input.addEventListener('input', function(){
-        slider.noUiSlider.set([null, this.value]);
+    inputs.forEach(function(input, handle) {
+      input.addEventListener('change', function(){
+        setSliderHandle(handle, this.value);
+        // slider.noUiSlider.set([null, this.value]);
       });
     });
   });
 }
+
+
 
 /*=====  End of Filter range slider  ======*/
 

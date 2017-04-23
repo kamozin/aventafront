@@ -3,8 +3,17 @@
 }
 
 .cart__items {
+  margin-bottom: 0;
+
+  thead {
+    th {
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
+  }
+
+  th,
   td {
-    padding: 10px;
+    padding: ($grid-gutter * 1px);
 
     &:first-child {
       padding-left: 0;
@@ -17,7 +26,8 @@
 }
 
 .cart__item-image {
-
+  min-width: 75px;
+  max-width: 100px;
 }
 
 .cart__item-title {
@@ -28,11 +38,13 @@
 
 .cart__item-price {
   white-space: nowrap;
+  text-align: right;
 }
 
 .cart__item-summary-price {
   font-weight: 600;
   white-space: nowrap;
+  text-align: right;
 }
 
 .cart__item-counter {
@@ -40,5 +52,87 @@
 }
 
 .cart__item-delete {
+
+}
+
+.cart__item-delete-button {
+  @include createButton();
+
+  min-width: 0;
+  padding: 1px 5px;
+  line-height: 1;
+  color: $light-color;
+  font-size: 22px;
+  background-color: transparent;
+}
+
+.cart__items tbody tr:hover .cart__item-delete-button {
+  color: $muted-color;
+
+  &:hover,
+  &:focus {
+    color: $base-color;
+  }
+}
+
+.cart__discount {
+  display: flex;
+  display: none;
+  align-items: center;
+}
+
+.cart__discount-image {
+  margin-right: ($grid-gutter * 1px);
+}
+
+.cart__discount-input {
+  margin-right: ($grid-gutter * 1px);
+}
+
+.cart__discount-button {
+  min-width: auto;
+}
+
+.cart__totals {
+
+}
+
+.cart__totals-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: ($grid-gutter * 1px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--primary {
+
+  }
+}
+
+.cart__totals-field {
+
+}
+
+.cart__totals-value {
+  font-weight: 700;
+}
+
+.cart__totals-item--primary .cart__totals-value {
+  font-size: 1.15em;
+  color: $primary-color;
+}
+
+.cart-form {
+
+}
+
+.cart-form__submit-wrapper {
+  margin-top: ($grid-gutter * 4px);
+  text-align: right;
+}
+
+.cart-form__submit {
 
 }
