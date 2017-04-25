@@ -1,10 +1,17 @@
 .form-item {
   margin-bottom: 15px;
-  // display: block;
+  display: block;
 
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media #{$tablet-up} {
+    &.row {
+      display: flex;
+    }
+  }
+
 }
 
 .form-label {
@@ -13,6 +20,14 @@
   vertical-align: middle;
   font-size: 0.95rem;
   cursor: pointer;
+}
+
+.form-item.row .form-label {
+  @media #{$tablet-up} {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: right;
+  }
 }
 
 .form-label--required::after {
@@ -31,7 +46,7 @@
   line-height: normal;
   background-color: #fff;
   border: 1px solid $field-border-color;
-  border-radius: 2px;
+  border-radius: $border-radius;
   box-sizing: border-box;
   transition: 0.25s;
 

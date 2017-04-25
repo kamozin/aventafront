@@ -14,9 +14,20 @@
 
   margin-bottom: 15px;
 
-  .hamburger-box {
-    margin-top: 3px;
-    margin-right: 10px;
+  &::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    margin-right: 0.5em;
+    border-radius: $border-radius;
+    background-color: currentColor;
+    box-shadow: 0 6px 0 currentColor,
+                0 -6px 0 currentColor;
+  }
+
+  &.is-active {
+    color: #fff;
+    background-color: mix(#000, $primary-color, 7%);
   }
 }
 
@@ -87,7 +98,7 @@
   width: 24px;
   height: 24px;
   margin-right: 10px;
-  background-color: #e55;
+  color: $primary-color;
 }
 
 

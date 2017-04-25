@@ -8,9 +8,9 @@ $color-grey-172: #acacac;
 $color-grey-235: #ebebeb;
 
 $success-color: #71dd5c;
-$info-color: #cef;
-$warning-color: yellow;
-$danger-color: red;
+$info-color: #b9dfff;
+$warning-color: #ffeb3b;
+$danger-color: #fd0d4d;
 
 $light-color: #e4e4e4;
 $muted-color: #949494;
@@ -22,6 +22,8 @@ $field-border-color: #acacac;
 $field-border-color--hover: $base-color;
 
 $transition-duration: 0.2s;
+
+$border-radius: 2px;
 
 
 // Hamburgers
@@ -37,7 +39,7 @@ $hamburger-hover-transition-timing-function: ease;
 
 // Fonts
 $font-size: 15px;
-$fonr-size--small: 12px;
+$font-size--small: 12px;
 $fonr-size--large: 18px;
 $primary-font: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $secondary-font: inherit;

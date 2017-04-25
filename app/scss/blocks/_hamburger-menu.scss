@@ -41,7 +41,7 @@
 
   appearance: none;
   transition: color 0.2s;
-  border-radius: 2px;
+  border-radius: $border-radius;
 
   &__item {
     position: absolute;

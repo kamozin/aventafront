@@ -1,0 +1,31 @@
+.label {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  vertical-align: middle;
+  border-radius: $border-radius;
+  border: 1px solid;
+
+  &--info {
+    color: mix(#000, $info-color, 55%);
+    border-color: mix(#000, $info-color, 15%);
+    background-color: $info-color;
+  }
+  &--success {
+    color: mix(#000, $success-color, 55%);
+    border-color: mix(#000, $success-color, 15%);
+    background-color: $success-color;
+  }
+  &--warning {
+    color: mix(#000, $warning-color, 55%);
+    border-color: mix(#000, $warning-color, 15%);
+    background-color: $warning-color;
+  }
+  &--danger {
+    color: mix(#000, $danger-color, 55%);
+    border-color: mix(#000, $danger-color, 15%);
+    background-color: $danger-color;
+  }
+
+}
