@@ -1,0 +1,27 @@
+.site-footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #fff;
+  background-color: $secondary-color;
+}
+
+.site-footer__inner {
+  @include container();
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer__logo {
+
+}
+
+.site-footer__top-nav {
+
+}
+
+.site-footer__copy {
+  font-size: $font-size--small;
+  flex-basis: 300px;
+}

@@ -3,7 +3,8 @@
 
   th,
   td {
-    padding: 10px 5px;
+    padding-top: ($grid-gutter * 1px);
+    padding-bottom: ($grid-gutter * 1px);
   }
 }
 
@@ -22,14 +23,10 @@
 .history-orders-table__cost {
   font-weight: 600;
   font-size: 1.15em;
-  // font-family: 'Open Sans Condensed', sans-serif;
   text-align: right;
 }
 
 .history-orders-table__more {
+  font-size: 13px;
   text-align: center;
-
-  .button {
-    min-width: auto;
-  }
 }

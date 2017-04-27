@@ -25,14 +25,14 @@
                   </li>
                 </ul>
                 <div class="tabs__pane" id='tab-private-info'>
-                  <h2>Личные данные</h2>
+                  <!-- <h2>Личные данные</h2> -->
                   <div class="row">
                     <form class="private-info-form col-tablet-up-10" action="" method="post">
                       <fieldset class="private-info-form__section">
                         <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Имя, Фамилия получателя:</span>
                           <div class="col-tablet-up-8">
-                            <input type="text" class="form-control" placeholder="Иван Иванов" required />
+                            <input type="text" class="form-control" name="fio" autocomplete="name" placeholder="Иван Иванов" required />
                           </div>
                         </label>
                         <label class="form-item row">
@@ -49,18 +49,18 @@
                         </label>
                       </fieldset>
                       <fieldset class="private-info-form__section">
-                        <label class="form-item row">
+                        <!-- <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Область:</span>
                           <div class="col-tablet-up-8">
                             <input type="text" class="form-control" placeholder="Брянская" required />
                           </div>
-                        </label>
-                        <label class="form-item row">
+                        </label> -->
+                        <!-- <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Город:</span>
                           <div class="col-tablet-up-8">
                             <input type="text" class="form-control" placeholder="Брянск" required />
                           </div>
-                        </label>
+                        </label> -->
                         <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Адрес:</span>
                           <div class="col-tablet-up-8">
@@ -83,13 +83,13 @@
                         </label>
                       </fieldset>
                       <div class="private-info-form__submit-wrapper">
-                        <button class="private-info-form__submit button button--orange" type="submit">Сохранить</button>
+                        <button class="private-info-form__submit button button--orange js-trigger-inline-popup" type="submit">Сохранить</button>
                       </div>
                     </form>
                   </div>
                 </div>
                 <div class="tabs__pane" id='tab-history-orders'>
-                  <h2>История заказов</h2>
+                  <!-- <h2>История заказов</h2> -->
                   <table class="history-orders-table">
                     <thead>
                       <tr>
@@ -109,7 +109,7 @@
                         <td class="history-orders-table__date">12.04.2017 17:30</td>
                         <td class="history-orders-table__cost">15 000.00 р.</td>
                         <td class="history-orders-table__more">
-                          <a class="button button--orange" href="#">Подробнее</a>
+                          <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
                         </td>
                       </tr>
                       <tr>
@@ -120,7 +120,7 @@
                         <td class="history-orders-table__date">12.04.2017 17:30</td>
                         <td class="history-orders-table__cost">15 000.00 р.</td>
                         <td class="history-orders-table__more">
-                          <a class="button button--orange" href="#">Подробнее</a>
+                          <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
                         </td>
                       </tr>
                       <tr>
@@ -131,7 +131,7 @@
                         <td class="history-orders-table__date">11.04.2017 9:30</td>
                         <td class="history-orders-table__cost">300 000.00 р.</td>
                         <td class="history-orders-table__more">
-                          <a class="button button--orange" href="#">Подробнее</a>
+                          <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
                         </td>
                       </tr>
                       <tr>
@@ -142,7 +142,7 @@
                         <td class="history-orders-table__date">30.03.2017 15:00</td>
                         <td class="history-orders-table__cost">1 200 000.00 р</td>
                         <td class="history-orders-table__more">
-                          <a class="button button--orange" href="#">Подробнее</a>
+                          <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
                         </td>
                       </tr>
                     </tbody>
@@ -155,5 +155,6 @@
       </main>
     </div>
     @@include('blocks/site-footer.html')
+    @@include('blocks/popup-details-order.html')
   </body>
   </html>
