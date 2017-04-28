@@ -1,11 +1,12 @@
 .site-wrapper {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  flex-grow: 1;
 }
 
 .main {
-  flex-grow: 1;
   padding-top: 15px;
+  padding-bottom: 15px;
   position: relative;
 
   &::after {

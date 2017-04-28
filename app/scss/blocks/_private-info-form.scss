@@ -1,0 +1,24 @@
+.private-info-form {
+
+}
+
+.private-info-form__section {
+  margin: 0;
+  margin-bottom: ($grid-gutter * 2px);
+  padding: 0;
+  padding-bottom: ($grid-gutter * 2px);
+  border: none;
+  border-bottom: 1px solid $light-color;
+
+  &:last-of-type {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+
+
+.private-info-form__submit-wrapper {
+  margin-top: ($grid-gutter * 4px);
+  text-align: right;
+}

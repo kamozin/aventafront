@@ -1,12 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
   svg4everybody();
 
+  var body = document.body;
   var main = document.querySelector('.main');
   var mainNav = document.querySelector('.main-nav');
 
   if (mainNav) {
     var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
     var mainNavList = mainNav.querySelector('.main-nav__list');
+
+    if (body.classList.contains('homepage')) {
+      mainNav.classList.toggle('main-nav--opened');
+      mainNavToogle.classList.toggle('is-active');
+    } else {
+      mainNavToogle.addEventListener('click', function(event) {
+        event.preventDefault();
+        mainNav.classList.toggle('main-nav--opened');
+        main.classList.toggle('main--overlay');
+        mainNavToogle.classList.toggle('is-active');
+      });
+    }
 
     mainNav.addEventListener('mouseover', toggleMainNavOverlay);
     mainNav.addEventListener('mouseout', toggleMainNavOverlay);
@@ -16,14 +29,41 @@ document.addEventListener('DOMContentLoaded', function() {
         main.classList.toggle('main--overlay');
       }
     }
-
-    mainNavToogle.addEventListener('click', function(event) {
-      event.preventDefault();
-      mainNav.classList.toggle('main-nav--opened');
-      main.classList.toggle('main--overlay');
-      mainNavToogle.classList.toggle('is-active');
-    });
   }
+
+
+  /*============================
+  =            Tabs            =
+  ============================*/
+
+  $('.tabs').tabslet({});
+
+  /*=====  End of Tabs  ======*/
+
+
+
+  /*======================================
+  =            Product button            =
+  ======================================*/
+
+  var $cards = $('.cards');
+
+  $cards.on('click', '.product-card__button', function(event) {
+    event.preventDefault();
+    var $self = $(this);
+    var $productCard = $(this).closest('.product-card');
+    var $productCardCounter = $productCard.find('.counter__input');
+
+    $self
+      .removeClass('button-orange')
+      .addClass('button')
+      .text('Перейти в корзину');
+
+    $productCardCounter.prop('readonly', true);
+  });
+
+  /*=====  End of Product button  ======*/
+
 
 
 
@@ -46,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
 /*===========================================
 =            Filter range slider            =
 ===========================================*/
-
 
 var filterIntervalItems = document.querySelectorAll('.filter-interval');
 
@@ -84,8 +123,6 @@ if (filterIntervalItems.length) {
     });
   });
 }
-
-
 
 /*=====  End of Filter range slider  ======*/
 

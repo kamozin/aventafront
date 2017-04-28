@@ -12,30 +12,12 @@
   line-height: normal;
   outline: none;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: $border-radius;
   box-sizing: border-box;
   user-select: none;
   cursor: pointer;
   transition: background-color $transition-duration, color $transition-duration;
 }
-
-// .button {
-//   @include createButton();
-
-//   color: #fff;
-
-//   &:hover,
-//   &:focus {
-//     color: #fff;
-//     background-color: mix(#fff, #ef6, 7%);
-//     outline: none;
-//   }
-
-//   &:active {
-//     color: #fff;
-//     background-color: mix(#000, #ef6, 7%);
-//   }
-// }
 
 .button {
   @include createButton();
@@ -56,7 +38,7 @@
   }
 }
 
-.button-orange {
+.button--orange {
   @include createButton();
 
   color: #fff;

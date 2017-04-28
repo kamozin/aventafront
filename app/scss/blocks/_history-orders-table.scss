@@ -1,0 +1,32 @@
+.history-orders-table {
+  margin: 0;
+
+  th,
+  td {
+    padding-top: ($grid-gutter * 1px);
+    padding-bottom: ($grid-gutter * 1px);
+  }
+}
+
+.history-orders-table__serial {
+  font-weight: 600;
+}
+
+.history-orders-table__status {
+
+}
+
+.history-orders-table__date {
+
+}
+
+.history-orders-table__cost {
+  font-weight: 600;
+  font-size: 1.15em;
+  text-align: right;
+}
+
+.history-orders-table__more {
+  font-size: 13px;
+  text-align: center;
+}

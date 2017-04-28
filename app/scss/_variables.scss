@@ -8,9 +8,9 @@ $color-grey-172: #acacac;
 $color-grey-235: #ebebeb;
 
 $success-color: #71dd5c;
-$info-color: #cef;
-$warning-color: yellow;
-$danger-color: red;
+$info-color: #b9dfff;
+$warning-color: #ffeb3b;
+$danger-color: #fd0d4d;
 
 $light-color: #e4e4e4;
 $muted-color: #949494;
@@ -23,22 +23,13 @@ $field-border-color--hover: $base-color;
 
 $transition-duration: 0.2s;
 
-
-// Hamburgers
-$hamburger-types: (slider);
-$hamburger-layer-width: 20px;
-$hamburger-layer-height: 2px;
-$hamburger-layer-spacing: 4.5px;
-$hamburger-layer-color: currentColor;
-$hamburger-layer-border-radius: 0;
-$hamburger-hover-opacity: 1;
-$hamburger-hover-transition-timing-function: ease;
+$border-radius: 2px;
 
 
 // Fonts
 $font-size: 15px;
-$fonr-size--small: 12px;
-$fonr-size--large: 18px;
+$font-size--small: 12px;
+$font-size--large: 18px;
 $primary-font: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $secondary-font: inherit;
 

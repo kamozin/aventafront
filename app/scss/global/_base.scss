@@ -3,6 +3,9 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   font-family: $primary-font;
   font-weight: normal;

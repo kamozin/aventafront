@@ -15,7 +15,6 @@
 // Vendors
 @import "vendors/slick";
 @import "vendors/magnific-popup";
-@import "vendors/hamburgers/hamburgers";
 @import "vendors/nouislider";
 
 // Blocks
@@ -25,6 +24,9 @@
 @import "blocks/counter";
 @import "blocks/table";
 @import "blocks/popup";
+@import "blocks/popup-details-order";
+@import "blocks/tabs";
+@import "blocks/label";
 @import "blocks/breadcrumbs";
 @import "blocks/custom-checkbox";
 @import "blocks/custom-radio";
@@ -48,6 +50,9 @@
 @import "blocks/cart";
 @import "blocks/checkout";
 @import "blocks/checkout-form";
+@import "blocks/private-info-form";
+@import "blocks/history-orders-table";
+@import "blocks/details-order-cart-table";
 @import "blocks/page";
 // @import "blocks/archive-events";
 @import "blocks/site-footer";

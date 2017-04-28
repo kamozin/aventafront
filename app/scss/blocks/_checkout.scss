@@ -25,6 +25,7 @@
 .checkout__summary-value {
   font-weight: 700;
   text-align: right;
+  white-space: nowrap;
 }
 
 .checkout__summary-item--primary .checkout__summary-value {

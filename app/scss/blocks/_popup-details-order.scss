@@ -1,0 +1,33 @@
+.popup-details-order {
+  max-width: 900px;
+}
+
+.popup-details-order__title {
+  // text-transform: none;
+}
+
+.details-order-table {
+  th, td {
+    border: none;
+  }
+
+  tbody {
+
+    &::after {
+      content: "";
+      display: table-row;
+      height: ($grid-gutter * 1px);
+    }
+  }
+}
+
+.details-order-table__field {
+  padding-right: ($grid-gutter * 2px);
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.details-order-table__value {
+  width: 80%;
+}

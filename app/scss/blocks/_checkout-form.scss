@@ -16,18 +16,19 @@
   }
 }
 
-.checkout-form__item {
-  align-items: flex-start;
-}
+// .checkout-form__item {
+//   display: flex;
+//   align-items: flex-start;
+// }
 
-.checkout-form__label {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: right;
-}
+// .checkout-form__label {
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   text-align: right;
+// }
 
 .checkout-form__checkbox {
-  font-size: $fonr-size--small;
+  font-size: $font-size--small;
 }
 
 .checkout-form__submit-wrapper {
