@@ -21,7 +21,7 @@
   font-size: 13px;
   text-decoration: none;
   color: #fff;
-  transition: $transition-duration;
+  transition: $duration;
 
   &:hover,
   &:focus {
@@ -36,7 +36,7 @@
   padding: 10px;
   font-size: $font-size--small;
   color: #fff;
-  transition: $transition-duration;
+  transition: $duration;
 
   &:hover,
   &:focus {

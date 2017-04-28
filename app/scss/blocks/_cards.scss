@@ -8,8 +8,24 @@
   // width: (100% / 3);
   margin-right: 15px;
   margin-bottom: 15px;
+  box-sizing: border-box;
 
   &:nth-child(3n) {
     margin-right: 0;
+  }
+}
+
+.cards--layout-2 {
+  .cards__item {
+    width: calc(100% / 4);
+    border: 1px solid #f7f7f7;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+.cards--stuck-image {
+  .cards__item {
+    // margin-bottom: 2px;
   }
 }

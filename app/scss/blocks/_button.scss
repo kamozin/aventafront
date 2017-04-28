@@ -1,6 +1,7 @@
 @mixin createButton() {
   display: inline-flex;
   min-width: 200px;
+  max-width: 100%;
   justify-content: center;
   align-items: center;
   padding: 10px 15px;
@@ -16,7 +17,7 @@
   box-sizing: border-box;
   user-select: none;
   cursor: pointer;
-  transition: background-color $transition-duration, color $transition-duration;
+  transition: background-color $duration, color $duration;
 }
 
 .button {

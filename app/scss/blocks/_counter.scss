@@ -1,5 +1,15 @@
 .counter {
   display: inline-flex;
+  user-select: none;
+
+
+  .cards--layout-2 & {
+    border: 1px solid $color-grey-235;
+
+    &:hover {
+      border-color: $color-grey-224;
+    }
+  }
 }
 
 .counter__input {
@@ -12,12 +22,46 @@
     margin: 0 !important;
     -moz-appearance: textfield !important;
   }
+
+  .cards--layout-2 & {
+    flex-grow: 1;
+    max-width: 4.5ch;
+    border: none;
+    // border-top: 1px solid $color-grey-235;
+    // border-bottom: 1px solid $color-grey-235;
+    outline: none;
+
+    &:focus {
+      background-color: mix(#fff, $color-grey-235, 30%);
+    }
+  }
 }
 
 .counter__control {
-  padding: 10px;
-  color: #fff;
+  padding: 10;
   font-size: 17px;
-  background-color: $color-grey-172;
   border: none;
+  color: #fff;
+  background-color: $color-grey-172;
+  cursor: pointer;
+
+  .cards--layout-2 & {
+    color: $accent-color;
+    width: 24px;
+    height: 30px;
+    padding: 0;
+    // background: $color-grey-235;
+    background: #fff;
+    transition: $duration;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      color: $primary-color;
+    }
+
+    &:active {
+      background: $color-grey-235;
+    }
+  }
 }
