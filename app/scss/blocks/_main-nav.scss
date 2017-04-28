@@ -41,14 +41,14 @@
   opacity: 0;
   visibility: hidden;
   background-color: #fff;
-  transition: opacity $transition-duration, transform $transition-duration, visibility 0s $transition-duration;
+  transition: opacity $duration, transform $duration, visibility 0s $duration;
 }
 
 .main-nav--opened .main-nav__list {
   transform: scale(1);
   opacity: 1;
   visibility: visible;
-  transition: opacity $transition-duration, transform $transition-duration, visibility $transition-duration;
+  transition: opacity $duration, transform $duration, visibility $duration;
 }
 
 .main-nav__item {
@@ -65,7 +65,7 @@
   color: $muted-color;
   text-decoration: none;
   border-bottom: 1px solid $color-grey-235;
-  transition: $transition-duration;
+  transition: $duration;
 
   &::after {
     content: "";
@@ -79,7 +79,7 @@
     margin: auto;
     border-top: 1px solid;
     border-right: 1px solid;
-    transition: $transition-duration;
+    transition: $duration;
   }
 }
 
@@ -107,7 +107,7 @@
   visibility: hidden;
   transform: translateX(-10px) scale(0.9);
   transform-origin: 0 0;
-  transition: opacity $transition-duration, transform $transition-duration, visibility 0s $transition-duration;
+  transition: opacity $duration, transform $duration, visibility 0s $duration;
 }
 
 .main-nav__item:hover .main-nav__drop {

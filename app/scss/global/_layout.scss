@@ -6,7 +6,7 @@
 
 .main {
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 50px;
   position: relative;
 
   &::after {
@@ -19,14 +19,14 @@
     background-color: #000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity $transition-duration, visibility 0s $transition-duration;
+    transition: opacity $duration, visibility 0s $duration;
   }
 
   &--overlay {
     &::after {
       opacity: 0.5;
       visibility: visible;
-      transition: opacity $transition-duration $transition-duration;
+      transition: opacity $duration $duration;
     }
   }
 }
