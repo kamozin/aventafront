@@ -1,7 +1,7 @@
 .counter {
   display: inline-flex;
+  border-radius: $border-radius;
   user-select: none;
-
 
   .cards--layout-2 & {
     border: 1px solid $color-grey-235;
@@ -27,8 +27,6 @@
     flex-grow: 1;
     max-width: 4.5ch;
     border: none;
-    // border-top: 1px solid $color-grey-235;
-    // border-bottom: 1px solid $color-grey-235;
     outline: none;
 
     &:focus {
@@ -45,13 +43,20 @@
   background-color: $color-grey-172;
   cursor: pointer;
 
+  &--down {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  &--up {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+
   .cards--layout-2 & {
     color: $accent-color;
     width: 24px;
     height: 30px;
     padding: 0;
-    // background: $color-grey-235;
-    background: #fff;
+    background: none;
     transition: $duration;
     outline: none;
 
