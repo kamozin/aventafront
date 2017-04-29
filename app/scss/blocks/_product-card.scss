@@ -118,7 +118,8 @@
   &::after {
     content: "₽";
     font-size: 0.85em;
-    color: $base-color;
+    // color: $base-color;
+    color: $color-grey-172;
 
     .cards--layout-2 & {
       font-weight: normal;
