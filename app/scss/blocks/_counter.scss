@@ -1,21 +1,23 @@
 .counter {
   display: inline-flex;
   border-radius: $border-radius;
+  border: 1px solid $color-grey-235;
   user-select: none;
 
-  // .cards--layout-2 & {
-    border: 1px solid $color-grey-235;
-
-    &:hover {
-      border-color: $color-grey-224;
-    }
-  // }
+  &:hover {
+    border-color: $color-grey-224;
+  }
 }
 
 .counter__input {
   text-align: center;
   max-width: 40px;
-  -moz-appearance:textfield;
+  flex-grow: 1;
+  max-width: 4.5ch;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  -moz-appearance: textfield;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -24,25 +26,40 @@
     -moz-appearance: textfield !important;
   }
 
-  // .cards--layout-2 & {
-    flex-grow: 1;
-    max-width: 4.5ch;
-    border: none;
-    outline: none;
+  &:read-only {
+    // background: $color-grey-235;
+  }
 
-    &:focus {
-      background-color: mix(#fff, $color-grey-235, 30%);
-    }
-  // }
+  &:focus {
+    background-color: mix(#fff, $color-grey-235, 30%);
+  }
 }
 
 .counter__control {
-  padding: 10;
+  width: 24px;
+  height: 30px;
+  padding: 0;
   font-size: 17px;
   border: none;
-  color: #fff;
-  background-color: $color-grey-172;
+  color: $accent-color;
+  background: none;
+  transition: $duration;
+  outline: none;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+
+  &:active {
+    background: $color-grey-235;
+  }
+
+  &:disabled {
+    color: $color-grey-235;
+    cursor: default;
+  }
 
   &--down {
     border-radius: $border-radius 0 0 $border-radius;
@@ -51,23 +68,4 @@
   &--up {
     border-radius: 0 $border-radius $border-radius 0;
   }
-
-  // .cards--layout-2 & {
-    color: $accent-color;
-    width: 24px;
-    height: 30px;
-    padding: 0;
-    background: none;
-    transition: $duration;
-    outline: none;
-
-    &:hover,
-    &:focus {
-      color: $primary-color;
-    }
-
-    &:active {
-      background: $color-grey-235;
-    }
-  // }
 }

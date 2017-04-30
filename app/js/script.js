@@ -52,14 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
     var $self = $(this);
     var $productCard = $(this).closest('.product-card');
+    var $productCardButtonLabel = $(this).find('.product-card__button-label')
     var $productCardCounter = $productCard.find('.counter__input');
+    var $productCardControls = $productCard.find('.counter__control');
 
-    $self
-      .removeClass('button-orange')
-      .addClass('button')
-      .text('Перейти в корзину');
+    $self.removeClass('button--orange');
+    $productCardButtonLabel.text('Перейти в корзину');
 
     $productCardCounter.prop('readonly', true);
+    $productCardControls.prop('disabled', true);
   });
 
   /*=====  End of Product button  ======*/

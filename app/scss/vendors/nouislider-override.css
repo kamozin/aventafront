@@ -1,0 +1,42 @@
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  height: 10px;
+}
+.noUi-horizontal .noUi-handle {
+  width: 22px;
+  height: 22px;
+  left: -11px;
+  top: -7px;
+}
+
+/* Styling;
+ */
+.noUi-target {
+  border-radius: 2px;
+}
+.noUi-connect {
+  background: #f16821;
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45);
+  -webkit-transition: background 450ms;
+  transition: background 450ms;
+}
+/* Handles and cursors;
+ */
+.noUi-handle {
+  border-radius: 50%;
+}
+.noUi-active {
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+}
+/* Handle stripes;
+ */
+.noUi-handle:before,
+.noUi-handle:after {
+  height: 8px;
+  left: 8px;
+  top: 6px;
+}
+.noUi-handle:after {
+  left: 11px;
+}
