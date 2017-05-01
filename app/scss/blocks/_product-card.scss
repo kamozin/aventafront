@@ -1,6 +1,5 @@
 .product-card {
   position: relative;
-  height: 399px;
 
   &:hover {
     z-index: 1;
@@ -11,7 +10,13 @@
   padding: 15px;
   background-color: #fff;
   border: 1px solid #e7e7e7;
-  transition: $transition-duration;
+  box-sizing: border-box;
+  transition: $duration;
+
+  .cards--type-list & {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .product-card:hover .product-card__inner {
@@ -21,20 +26,28 @@
 .product-card__image-frame {
   position: relative;
   margin-bottom: 15px;
+  min-width: 150px;
+
+  .cards--type-list & {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
 }
 
 .product-card__image-holder {
-  @include fitObject(260, 170);
+  @include fitObject(260, 170, contain);
 
   display: block;
 }
 
 .product-card__image {
-
 }
 
 .product-card__info {
 
+  .cards--type-list & {
+    margin-right: 30px;
+  }
 }
 
 .product-card__title {
@@ -46,41 +59,76 @@
   font-size: 15px;
   line-height: 18px;
   overflow: hidden;
-  transition: $transition-duration;
+  transition: $duration;
 
   a {
     display: block;
     color: currentColor;
     text-decoration: none;
   }
+
+  .cards--type-list & {
+    max-height: none;
+  }
 }
 
 .product-card:hover .product-card__title {
   max-height: (18px * 6);
+
+  .cards--type-list & {
+    max-height: none;
+  }
 }
 
 .product-card__status {
   margin-bottom: 15px;
   font-size: 14px;
   line-height: 16px;
+
+  .cards--type-list & {
+    margin-bottom: 0;
+  }
+}
+
+.product-card__footer {
+  text-align: center;
+
+  .cards--type-list & {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .product-card__buying {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+  text-align: left;
+
+  .cards--type-list & {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
 }
 
 .product-card__price {
   flex-grow: 1;
-
+  white-space: nowrap;
 
   &--old {
     position: absolute;
     left: 10px;
     bottom: 10px;
+  }
+
+  .cards--layout-2 & {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 600;
+
+    &--old {
+      font-weight: normal;
+    }
   }
 }
 
@@ -89,9 +137,11 @@
   color: $primary-color;
 
   &::after {
-    content: "₽";
-    font-size: 0.85em;
-    color: $base-color;
+    content: "\E007";
+    font-size: 0.66em;
+    font-weight: normal;
+    font-family: "rouble";
+    color: $color-grey-172;
   }
 }
 
@@ -109,6 +159,40 @@
   font-size: 0;
 }
 
-.product-card__footer {
-  text-align: center;
+.product-card__counter {
+
+  .cards--type-list & {
+    margin-left: 20px;
+  }
+}
+
+.product-card__button {
+
+  .cards--layout-2 & {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .cards--type-list & {
+    font-size: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.product-card__button-icon {
+  display: none;
+
+
+  .cards--type-list & {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    fill: currentColor;
+  }
 }

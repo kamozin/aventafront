@@ -16,6 +16,7 @@
 @import "vendors/slick";
 @import "vendors/magnific-popup";
 @import "vendors/nouislider";
+@import "vendors/nouislider-override";
 
 // Blocks
 @import "blocks/icon";
@@ -43,6 +44,8 @@
 @import "blocks/hamburger-menu";
 @import "blocks/billboard";
 @import "blocks/section-products";
+@import "blocks/sort-filter";
+@import "blocks/catalog-mode";
 @import "blocks/cards";
 @import "blocks/catalog-filter";
 @import "blocks/product-card";

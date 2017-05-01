@@ -1,0 +1,38 @@
+.catalog-mode {
+
+}
+
+.catalog-mode__item {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 0;
+  vertical-align: middle;
+  color: $color-grey-172;
+  transition: color $duration;
+
+  &:hover,
+  &:focus {
+    color: $muted-color;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--active {
+    color: $primary-color;
+    cursor: default;
+
+    &:hover,
+    &:focus {
+      color: $primary-color;
+    }
+  }
+}
+
+.catalog-mode__icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  margin-right: 0.5em;
+}

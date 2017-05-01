@@ -1,10 +1,23 @@
 .counter {
   display: inline-flex;
+  border-radius: $border-radius;
+  border: 1px solid $color-grey-235;
+  user-select: none;
+
+  &:hover {
+    border-color: $color-grey-224;
+  }
 }
 
 .counter__input {
   text-align: center;
   max-width: 40px;
+  flex-grow: 1;
+  max-width: 4.5ch;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  -moz-appearance: textfield;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -12,12 +25,47 @@
     margin: 0 !important;
     -moz-appearance: textfield !important;
   }
+
+  &:read-only {
+    // background: $color-grey-235;
+  }
+
+  &:focus {
+    background-color: mix(#fff, $color-grey-235, 30%);
+  }
 }
 
 .counter__control {
-  padding: 10px;
-  color: #fff;
+  width: 24px;
+  height: 30px;
+  padding: 0;
   font-size: 17px;
-  background-color: $color-grey-172;
   border: none;
+  color: $accent-color;
+  background: none;
+  transition: $duration;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+
+  &:active {
+    background: $color-grey-235;
+  }
+
+  &:disabled {
+    color: $color-grey-235;
+    cursor: default;
+  }
+
+  &--down {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  &--up {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
 }

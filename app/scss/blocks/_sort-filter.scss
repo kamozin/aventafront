@@ -1,0 +1,79 @@
+.sort-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.sort-filter__group {
+  display: flex;
+  align-items: center;
+}
+
+.sort-filter__label {
+  margin-right: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sort-filter__control-items {
+
+}
+
+.sort-filter__control {
+  display: inline-block;
+  padding: 2px;
+  font-size: 13px;
+  color: $color-grey-172;
+  vertical-align: middle;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    color: $muted-color;
+  }
+
+  &--active {
+    color: $base-color;
+
+    &:hover,
+    &:focus {
+      color: $base-color;
+    }
+  }
+}
+
+.sort-filter__order-by {
+  position: relative;
+  padding-right: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    bottom: 0;
+    transform: rotate(-45deg);
+    width: 6px;
+    height: 6px;
+    margin: auto;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    transition: $duration;
+  }
+
+
+  &--asc {
+
+  }
+
+  &--desc {
+    &::before {
+      top: 0;
+      bottom: 4px;
+      transform: rotate(135deg);
+    }
+  }
+}

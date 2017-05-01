@@ -11,6 +11,13 @@
   height: 33px;
   text-decoration: none;
   margin-right: 0.7em;
+  opacity: 0.8;
+  transition: opacity $duration;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
 
   &:last-child {
     margin-right: 0;
