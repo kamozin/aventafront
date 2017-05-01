@@ -167,4 +167,56 @@ if (filterIntervalItems.length) {
 
   /*=====  End of Input mask  ======*/
 
+
+
+  /*================================
+  =            Contacts            =
+  ================================*/
+
+  // Map
+
+  ymaps.ready(initMap);
+
+  function initMap() {
+    // Дуки 69
+    map1 = new ymaps.Map("contacts-map-1", {
+      center: [53.298378, 34.314458],
+      zoom: 16,
+      controls: []
+    });
+
+    mapMarker1 = new ymaps.Placemark([53.298378, 34.314458], {
+      hintContent: "Центральный офис – г. Брянск, Бежицкий район, ул. Бурова, 8"
+    }, {
+      // iconLayout: 'default#image',
+      // iconImageHref: 'img/icon-map-pin.svg',
+      // iconImageSize: [67, 100],
+      // iconImageOffset: [-33, -100]
+    });
+
+    map1.behaviors.disable(['scrollZoom']);
+    map1.geoObjects.add(mapMarker1);
+
+    // Институтская 15
+    map2 = new ymaps.Map("contacts-map-2", {
+      center: [53.227091, 34.321222],
+      zoom: 16,
+      controls: []
+    });
+
+    mapMarker2 = new ymaps.Placemark([53.227091, 34.321222], {
+      hintContent: "Магазин-офис – г. Брянск, Советский район, проспект Станке-Димитрова, 67"
+    }, {
+      // iconLayout: 'default#image',
+      // iconImageHref: 'img/icon-map-pin.svg',
+      // iconImageSize: [67, 100],
+      // iconImageOffset: [-33, -100]
+    });
+
+    map2.behaviors.disable(['scrollZoom']);
+    map2.geoObjects.add(mapMarker2);
+
+  }
+
+  /*=====  End of Contacts  ======*/
 });

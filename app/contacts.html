@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Контактная информация</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  <div class="site-wrapper">
+    @@include('blocks/site-header.html')
+    <!-- main--overlay — показывает оверлей при наведении на main-nav__list -->
+    <main class="main">
+      <div class="main__container">
+        <div class="sidebar-area">
+          <div class="sidebar">
+            <div class="sidebar__module">
+              @@include('blocks/main-nav.html')
+            </div>
+          </div>
+        </div>
+        <div class="content-area">
+          <div class="content product">
+            <h1 class="page-title">Контактная информация</h1>
+
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Главная</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link">Контактная информация</a>
+              </li>
+            </ul>
+
+            <div class="contacts">
+              <h2 class="contacts__title">
+                Центральный офис
+                <span class="contacts__address">
+                  <svg class="contacts__address-icon" width="22" height="22">
+                    <use xlink:href="img/symbols.svg#icon-pin"></use>
+                  </svg>
+                  241035, г. Брянск, Бежицкий район, ул. Бурова, 8
+                </span>
+              </h2>
+              <div class="row">
+                <div class="contacts__column col-tablet-up-6">
+                  <div class="contacts__map" id="contacts-map-1"></div>
+                </div>
+                <div class="contacts__column col-tablet-up-6">
+                  <div class="page-block">
+                    <div class="contacts__info">
+                      <h3 class="contacts__info-title">Розничный отдел:</h3>
+                      <ul class="contacts__info-list">
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-phone-2"></use>
+                          </svg>
+                          <a href="tel:8 (4832) 220-380">220&#8209;380</a> <small>(доб. 1)</small>, <a href="tel:8 (4832) 51-63-81">51&#8209;63&#8209;81</a>, <a href="tel:8 (4832) 51-63-82">51&#8209;63&#8209;82</a>, <a href="tel:8 (4832) 51-66-41">51&#8209;66&#8209;41</a>
+                        </li>
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-mail"></use>
+                          </svg>
+                          <a href="mailto:shop@aventa-electro.ru">shop@aventa-electro.ru</a>
+                        </li>
+                      </ul>
+                      <h3 class="contacts__info-title">Оптовый отдел:</h3>
+                      <ul class="contacts__info-list">
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-phone-2"></use>
+                          </svg>
+                          <a href="tel:8 (4832) 220-380">220&#8209;380</a> <small>(доб. 2)</small>, <a href="tel:8 (4832) 51-12-37">51&#8209;12&#8209;37</a>, <a href="tel:8 (4832) 51-12-60">51&#8209;12&#8209;60</a>, <a href="tel:8 (4832) 51-12-44">51&#8209;12&#8209;44</a>
+                        </li>
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-mail"></use>
+                          </svg>
+                          <a href="mailto:opt@aventa-electro.ru">opt@aventa&#8209;electro.ru</a>
+                        </li>
+                      </ul>
+                      <h3 class="contacts__info-title">Отдел снабжения:</h3>
+                      <ul class="contacts__info-list">
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-phone-2"></use>
+                          </svg>
+                          <a href="tel:8 (4832) 51-09-04">51&#8209;09&#8209;04</a>, <a href="tel:8 (4832) 51-09-05">51&#8209;09&#8209;05</a>
+                        </li>
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-mail"></use>
+                          </svg>
+                          <a href="mailto:snab@aventa-electro.ru">snab@aventa&#8209;electro.ru</a>
+                        </li>
+                      </ul>
+                      <h3 class="contacts__info-title">Бухгалтерия:</h3>
+                      <ul class="contacts__info-list">
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-phone-2"></use>
+                          </svg>
+                          <a href="tel:8 (4832) 51-05-09">51&#8209;05&#8209;09</a>
+                        </li>
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-mail"></use>
+                          </svg>
+                          <a href="mailto:buh@aventa-electro.ru">buh@aventa&#8209;electro.ru</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contacts">
+              <h2 class="contacts__title">
+                Магазин&#8209;офис
+                <span class="contacts__address">
+                  <svg class="contacts__address-icon" width="22" height="22">
+                    <use xlink:href="img/symbols.svg#icon-pin"></use>
+                  </svg>
+                  241028, г. Брянск, Советский район, проспект Станке&#8209;Димитрова, 67
+                </span>
+              </h2>
+              <div class="row">
+                <div class="contacts__column col-tablet-up-6">
+                  <div class="contacts__map" id="contacts-map-2"></div>
+                </div>
+                <div class="contacts__column col-tablet-up-6">
+                  <div class="page-block">
+                    <div class="contacts__info">
+                      <h3 class="contacts__info-title">Розничный отдел:</h3>
+                      <ul class="contacts__info-list">
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-phone-2"></use>
+                          </svg>
+                          <a href="tel:8 (4832) 220-380">220&#8209;380</a> <small>(доб. 3)</small>
+                        </li>
+                        <li>
+                          <svg class="contacts__info-icon" width="22" height="22">
+                            <use xlink:href="img/symbols.svg#icon-mail"></use>
+                          </svg>
+                          <a href="mailto:shop1@aventa-electro.ru">shop1@aventa&#8209;electro.ru</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  @@include('blocks/site-footer.html')
+</body>
+</html>
