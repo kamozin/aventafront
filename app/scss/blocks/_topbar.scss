@@ -8,9 +8,11 @@
 .topbar__inner {
   @include container();
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @media #{$mobile-up} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .topbar__phone {
@@ -23,6 +25,10 @@
   &:hover,
   &:focus {
     color: #efefef;
+  }
+
+  @media #{$tablet-only} {
+    display: none;
   }
 }
 

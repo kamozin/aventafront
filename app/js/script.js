@@ -66,6 +66,32 @@ document.addEventListener('DOMContentLoaded', function() {
   /*=====  End of Product button  ======*/
 
 
+  /*============================================
+  =            Product cards height            =
+  ============================================*/
+
+  var $productCard = $('.product-card');
+  var productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
+
+  $productCard.each(recalculateProductCardHeight);
+
+  $(window).on('resize', function() {
+    console.log('resize')
+    productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
+    $productCard.each(recalculateProductCardHeight);
+  });
+
+  function recalculateProductCardHeight() {
+    if (!$(this).closest('.cards').hasClass('cards--mode-list'))
+    $(this).height(productCardHeight);
+  }
+
+  /*=====  End of Product cards height  ======*/
+
+
+
+
+
 
 
   /*================================================
@@ -174,11 +200,13 @@ if (filterIntervalItems.length) {
   ================================*/
 
   // Map
+  var contactsMap = document.querySelector('.contacts-map');
 
-  ymaps.ready(initMap);
+  if (contactsMap) {
+    ymaps.ready(initMap);
+  }
 
   function initMap() {
-    // Дуки 69
     map1 = new ymaps.Map("contacts-map-1", {
       center: [53.298378, 34.314458],
       zoom: 16,
@@ -197,7 +225,6 @@ if (filterIntervalItems.length) {
     map1.behaviors.disable(['scrollZoom']);
     map1.geoObjects.add(mapMarker1);
 
-    // Институтская 15
     map2 = new ymaps.Map("contacts-map-2", {
       center: [53.227091, 34.321222],
       zoom: 16,
@@ -215,8 +242,8 @@ if (filterIntervalItems.length) {
 
     map2.behaviors.disable(['scrollZoom']);
     map2.geoObjects.add(mapMarker2);
-
   }
 
   /*=====  End of Contacts  ======*/
+
 });
