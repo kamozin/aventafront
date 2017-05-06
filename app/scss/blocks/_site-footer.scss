@@ -9,12 +9,30 @@
   @include container();
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+
+  @media #{$tablet-up} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.site-footer__column:not(:last-child) {
+  margin-bottom: ($grid-gutter * 2px);
+
+  @media #{$tablet-up} {
+    margin-bottom: 0;
+    margin-right: ($grid-gutter * 2px);
+  }
 }
 
 .site-footer__logo {
+  display: none;
 
+  @media #{$tablet-up} {
+    display: block;
+  }
 }
 
 .site-footer__top-nav {
@@ -23,5 +41,10 @@
 
 .site-footer__copy {
   font-size: $font-size--small;
-  flex-basis: 300px;
+  text-align: center;
+
+  @media #{$tablet-up} {
+    text-align: left;
+    flex-basis: 300px;
+  }
 }

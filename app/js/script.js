@@ -6,23 +6,41 @@ document.addEventListener('DOMContentLoaded', function() {
   var mainNav = document.querySelector('.main-nav');
 
   if (mainNav) {
-    var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
-    var mainNavList = mainNav.querySelector('.main-nav__list');
+    if ((matchMedia('(min-width: 768px)').matches)) {
+      // desktop menu
+      var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
+      var mainNavList = mainNav.querySelector('.main-nav__list');
 
-    if (body.classList.contains('homepage')) {
-      mainNav.classList.toggle('main-nav--opened');
-      mainNavToogle.classList.toggle('is-active');
-    } else {
-      mainNavToogle.addEventListener('click', function(event) {
-        event.preventDefault();
+      if (body.classList.contains('homepage')) {
         mainNav.classList.toggle('main-nav--opened');
-        main.classList.toggle('main--overlay');
         mainNavToogle.classList.toggle('is-active');
+      } else {
+        mainNavToogle.addEventListener('click', function(event) {
+          event.preventDefault();
+          mainNav.classList.toggle('main-nav--opened');
+          main.classList.toggle('main--overlay');
+          mainNavToogle.classList.toggle('is-active');
+        });
+      }
+
+      mainNav.addEventListener('mouseover', toggleMainNavOverlay);
+      mainNav.addEventListener('mouseout', toggleMainNavOverlay);
+    } else {
+      // Mobile menu
+      $('.main-nav__wrapper').mmenu({
+        navbar: {
+          title: "Каталог продукции"
+        }
+      }, {
+        // configuration
+        offCanvas: {
+          pageSelector: ".site-wrapper"
+        },
+        classNames: {
+          selected: "main-subnav__item--active"
+        }
       });
     }
-
-    mainNav.addEventListener('mouseover', toggleMainNavOverlay);
-    mainNav.addEventListener('mouseout', toggleMainNavOverlay);
 
     function toggleMainNavOverlay(event) {
       if (mainNav.classList.contains('main-nav--opened')) {
@@ -30,6 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
+
+
+  /*=============================
+  =            Mmenu            =
+  =============================*/
+
+
+
+
+  /*=====  End of Mmenu  ======*/
+
 
 
   /*============================

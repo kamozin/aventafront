@@ -19,7 +19,7 @@
   }
 }
 
-@media (min-width: $media-mobile-up) {
+@media #{$mobile-up} {
   @for $i from 1 through $grid-count {
     .col-mobile-up-#{$i} {
       width: percentage($i / $grid-count);
@@ -35,7 +35,7 @@
   }
 }
 
-@media (min-width: $media-tablet-up) {
+@media #{$tablet-up} {
   @for $i from 1 through $grid-count {
     .col-tablet-up-#{$i} {
       width: percentage($i / $grid-count);
@@ -51,7 +51,7 @@
   }
 }
 
-@media (min-width: $media-laptop-up) {
+@media #{$laptop-up} {
   @for $i from 1 through $grid-count {
     .col-laptop-up-#{$i} {
       width: percentage($i / $grid-count);
@@ -59,9 +59,17 @@
   }
 }
 
-@media (max-width: $media-laptop-down) {
+@media #{$desktop-up} {
   @for $i from 1 through $grid-count {
-    .col-laptop-down-#{$i} {
+    .col-desktop-up-#{$i} {
+      width: percentage($i / $grid-count);
+    }
+  }
+}
+
+@media (max-width: $media-desktop-down) {
+  @for $i from 1 through $grid-count {
+    .col-desktop-down-#{$i} {
       width: percentage($i / $grid-count);
     }
   }
