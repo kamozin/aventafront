@@ -31,10 +31,12 @@
 
 .main__container {
   @include container();
+  display: flex;
+  flex-direction: column;
 
 
   @media #{$tablet-up} {
-    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -50,6 +52,7 @@
 }
 
 .content-area {
+  order: 1;
 
   @media #{$tablet-up} {
     flex-grow: 1;

@@ -1,5 +1,7 @@
 .catalog-mode {
-
+  @media #{$mobile-only} {
+    display: none;
+  }
 }
 
 .catalog-mode__item {

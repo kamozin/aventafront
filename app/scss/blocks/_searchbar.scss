@@ -7,7 +7,11 @@
 }
 
 .searchbar__select-holder {
+  display: none;
 
+  @media #{$mobile-up} {
+    display: flex;
+  }
 }
 
 .searchbar__submit-holder {
@@ -15,17 +19,32 @@
 }
 
 .searchbar__input {
+  width: auto;
+  flex-grow: 1;
+  min-width: 100px;
+  font-size: $font-size--small;
   border-radius: 3px 0 0 3px;
 
   @media #{$tablet-up} {
+    min-width: 200px;
+  }
+
+  @media #{$laptop-up} {
     min-width: 300px;
+    font-size: $font-size;
   }
 }
 
 .searchbar__select {
+  width: auto;
+  font-size: $font-size--small;
   border-radius: 0;
   border-left: none;
   border-right: none;
+
+  @media #{$laptop-up} {
+    font-size: $font-size;
+  }
 }
 
 .searchbar__submit {

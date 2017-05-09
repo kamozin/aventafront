@@ -1,14 +1,26 @@
 .sort-filter {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   user-select: none;
+
+  @media #{$mobile-up} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .sort-filter__group {
   display: flex;
   align-items: center;
+  margin-bottom: ($grid-gutter * 1px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media #{$mobile-up} {
+    margin-bottom: auto;
+  }
 }
 
 .sort-filter__label {

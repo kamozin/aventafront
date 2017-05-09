@@ -1,4 +1,5 @@
 .topbar {
+  // display: none;
   position: relative;
   z-index: 2;
   background-color: $secondary-color;
@@ -16,19 +17,23 @@
 }
 
 .topbar__phone {
-  display: inline-flex;
-  align-items: center;
-  font-size: $font-size--small;
-  color: #fff;
-  transition: $duration;
+  display: none;
 
-  &:hover,
-  &:focus {
-    color: #efefef;
+  @media (min-width: 568px) {
+    display: inline-flex;
+    font-size: 0;
+    align-items: center;
+    color: #fff;
+    transition: $duration;
+
+    &:hover,
+    &:focus {
+      color: #efefef;
+    }
   }
 
-  @media #{$tablet-only} {
-    display: none;
+  @media #{$laptop-up} {
+    font-size: $font-size--small;
   }
 }
 

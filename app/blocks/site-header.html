@@ -61,19 +61,24 @@
 
 <header class="site-header">
   <div class="site-header__inner">
-    <div class="site-header__logo">
+    <div class="site-header__column site-header__logo">
       <a class="site-header__logo-link" href="index.html">
-        <img class="site-header__logo-image" src="../img/logo.svg" width="280" height="58" alt="Логотип компании «Авента»">
+        <picture>
+          <source media="(min-width: 768px)" srcset="../img/logo.svg">
+          <img class="site-header__logo-image" src="../img/logo-footer.svg" width="280" alt="Логотип компании «Авента»">
+        </picture>
       </a>
     </div>
 
-    <form class="site-header__searchbar searchbar" action="" method="post">
-      <input type="text" class="searchbar__input form-control" name="q" placeholder="Я ищу…">
-      <select name="" id="" class="searchbar__select form-control">
-        <option value="all" selected>Все категории</option>
-        <option value="cat_1">Категория 1</option>
-        <option value="cat_2">Категория 2</option>
-      </select>
+    <form class="site-header__column site-header__searchbar searchbar" action="" method="post">
+      <input type="search" class="searchbar__input form-control" name="q" placeholder="Я ищу…">
+      <div class="custom-select searchbar__select-holder">
+        <select name="" id="" class="searchbar__select form-control">
+          <option value="all" selected>Все категории</option>
+          <option value="cat_1">Категория 1</option>
+          <option value="cat_2">Категория 2</option>
+        </select>
+      </div>
       <button class="searchbar__submit button" type="submit">
         <svg class="seacrhbar__submit-icon" width="24" height="24">
           <use xlink:href="img/symbols.svg#icon-search"></use>
@@ -82,6 +87,6 @@
       </button>
     </form>
 
-    <a class="site-header__trigger-callback button js-trigger-inline-popup" href="#popup-callback">Заказать звонок</a>
+    <a class="site-header__column site-header__trigger-callback button js-trigger-inline-popup" href="#popup-callback">Заказать звонок</a>
   </div>
 </header>

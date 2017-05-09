@@ -24,6 +24,12 @@
   }
 }
 
+.site-header__column:not(:last-child) {
+  @media #{$tablet-up} {
+    margin-right: ($grid-gutter * 2px);
+  }
+}
+
 .site-header__logo {
   margin-bottom: ($grid-gutter * 2px);
 
@@ -33,9 +39,17 @@
 }
 
 .site-header__searchbar {
-  margin-bottom: ($grid-gutter * 2px);
+  width: 100%;
 
   @media #{$tablet-up} {
-    margin-bottom: 0;
+    width: auto;
+    // margin-bottom: 0;
+  }
+}
+
+.site-header__trigger-callback {
+
+  @media #{$mobile-only} {
+    display: none;
   }
 }
