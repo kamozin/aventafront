@@ -14,8 +14,9 @@
 }
 
 .user-nav__link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   padding: ($grid-gutter * 1px);
   font-size: $font-size--small;
   color: #fff;

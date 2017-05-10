@@ -43,6 +43,10 @@
 .sidebar-area {
   margin-bottom: ($grid-gutter * 4px);
 
+  .homepage & {
+    margin-bottom: ($grid-gutter * 1px);
+  }
+
   @media #{$tablet-up} {
     flex-shrink: 0;
     width: $column-desktop;
@@ -69,6 +73,10 @@
 }
 
 .page-block {
-  padding: ($grid-gutter * 2px);
+  padding: ($grid-gutter * 1px);
   background-color: #fff;
+
+  @media #{$tablet-up} {
+    padding: ($grid-gutter * 2px);
+  }
 }
