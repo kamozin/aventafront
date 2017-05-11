@@ -46,8 +46,8 @@ $media-mobile-down: $media-mobile-up - 1;
 $media-tablet-up: 768px;
 $media-tablet-down: $media-tablet-up - 1;
 
-$media-laptop-up: 1280px;
-$media-laptop-down: $media-laptop-up - 1;
+$media-desktop-up: 1280px;
+$media-desktop-down: $media-desktop-up - 1;
 
 // $column-mobile-size: 130px;
 $column-tablet-size: 180;
@@ -55,9 +55,10 @@ $column-desktop: 280px;
 $gutter-desktop: 20px;
 
 // Breakpoints
-$mobile-up: "(min-width: 320px)";
+$mobile-up: "(min-width: 480px)";
 $mobile-only: "(max-width: 767px)";
 $tablet-up: "(min-width: 768px)";
-$tablet-only: "(max-width: 1279px)";
+$tablet-only: "(max-width: 991px)";
+$laptop-up: "(min-width: 992px)";
 $desktop-up: "(min-width: 1280px)";
 $retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";

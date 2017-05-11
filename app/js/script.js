@@ -2,34 +2,65 @@ document.addEventListener('DOMContentLoaded', function() {
   svg4everybody();
 
   var body = document.body;
+  var contentArea = document.querySelector('.content-area');
   var main = document.querySelector('.main');
   var mainNav = document.querySelector('.main-nav');
 
-  if (mainNav) {
-    var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
-    var mainNavList = mainNav.querySelector('.main-nav__list');
-
-    if (body.classList.contains('homepage')) {
-      mainNav.classList.toggle('main-nav--opened');
-      mainNavToogle.classList.toggle('is-active');
-    } else {
-      mainNavToogle.addEventListener('click', function(event) {
-        event.preventDefault();
-        mainNav.classList.toggle('main-nav--opened');
-        main.classList.toggle('main--overlay');
-        mainNavToogle.classList.toggle('is-active');
-      });
-    }
-
-    mainNav.addEventListener('mouseover', toggleMainNavOverlay);
-    mainNav.addEventListener('mouseout', toggleMainNavOverlay);
-
-    function toggleMainNavOverlay(event) {
-      if (mainNav.classList.contains('main-nav--opened')) {
-        main.classList.toggle('main--overlay');
-      }
+  function toggleMainNavOverlay(event) {
+    if (mainNav.classList.contains('main-nav--opened')) {
+      main.classList.toggle('main--overlay');
     }
   }
+
+  function setContentAreaHeight(mainNavList, contentArea) {
+    var mainNavListHeight = mainNavList.offsetHeight;
+    contentArea.style.minHeight = mainNavListHeight + 'px';
+  }
+
+  if (mainNav) {
+    if ((matchMedia('(min-width: 768px)').matches)) {
+      // Desktop menu
+      var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
+      var mainNavList = mainNav.querySelector('.main-nav__list');
+
+      setContentAreaHeight(mainNavList, contentArea);
+
+      mainNavToogle.addEventListener('click', function(event) {
+        event.preventDefault();
+      });
+
+      if (body.classList.contains('homepage')) {
+        mainNav.classList.toggle('main-nav--opened');
+        mainNavToogle.classList.toggle('is-active');
+      } else {
+        mainNavToogle.addEventListener('click', function(event) {
+          mainNav.classList.toggle('main-nav--opened');
+          main.classList.toggle('main--overlay');
+          mainNavToogle.classList.toggle('is-active');
+        });
+      }
+
+      mainNav.addEventListener('mouseover', toggleMainNavOverlay);
+      mainNav.addEventListener('mouseout', toggleMainNavOverlay);
+
+    } else {
+      // Mobile menu
+      $('.main-nav__wrapper').mmenu({
+        navbar: {
+          title: "Каталог продукции"
+        }
+      }, {
+        // configuration
+        offCanvas: {
+          pageSelector: ".site-wrapper"
+        },
+        classNames: {
+          selected: "main-subnav__item--active"
+        }
+      });
+    }
+  }
+
 
 
   /*============================
@@ -65,6 +96,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /*=====  End of Product button  ======*/
 
+
+
+  /*============================================
+  =            Product cards height            =
+  ============================================*/
+
+  var $productCard = $('.product-card');
+  var productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
+
+  $productCard.each(recalculateProductCardHeight);
+
+  $(window).on('resize', function() {
+    productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
+    $productCard.each(recalculateProductCardHeight);
+  });
+
+  function recalculateProductCardHeight() {
+    if ($(this).closest('.cards').hasClass('cards--mode-list') && matchMedia('(min-width: 992px)').matches) {
+      return
+    }
+    $(this).height(productCardHeight);
+  }
+
+  /*=====  End of Product cards height  ======*/
 
 
 
@@ -174,11 +229,13 @@ if (filterIntervalItems.length) {
   ================================*/
 
   // Map
+  var contactsMap = document.querySelector('.contacts-map');
 
-  ymaps.ready(initMap);
+  if (contactsMap) {
+    ymaps.ready(initMap);
+  }
 
   function initMap() {
-    // Дуки 69
     map1 = new ymaps.Map("contacts-map-1", {
       center: [53.298378, 34.314458],
       zoom: 16,
@@ -197,7 +254,6 @@ if (filterIntervalItems.length) {
     map1.behaviors.disable(['scrollZoom']);
     map1.geoObjects.add(mapMarker1);
 
-    // Институтская 15
     map2 = new ymaps.Map("contacts-map-2", {
       center: [53.227091, 34.321222],
       zoom: 16,
@@ -215,7 +271,6 @@ if (filterIntervalItems.length) {
 
     map2.behaviors.disable(['scrollZoom']);
     map2.geoObjects.add(mapMarker2);
-
   }
 
   /*=====  End of Contacts  ======*/

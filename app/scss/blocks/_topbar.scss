@@ -1,4 +1,5 @@
 .topbar {
+  // display: none;
   position: relative;
   z-index: 2;
   background-color: $secondary-color;
@@ -8,21 +9,31 @@
 .topbar__inner {
   @include container();
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @media #{$mobile-up} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .topbar__phone {
-  display: inline-flex;
-  align-items: center;
-  font-size: $font-size--small;
-  color: #fff;
-  transition: $duration;
+  display: none;
 
-  &:hover,
-  &:focus {
-    color: #efefef;
+  @media (min-width: 568px) {
+    display: inline-flex;
+    font-size: 0;
+    align-items: center;
+    color: #fff;
+    transition: $duration;
+
+    &:hover,
+    &:focus {
+      color: #efefef;
+    }
+  }
+
+  @media #{$laptop-up} {
+    font-size: $font-size--small;
   }
 }
 

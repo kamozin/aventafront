@@ -13,7 +13,7 @@
     margin-bottom: 0;
   }
 
-  @media #{$tablet-up} {
+  @media #{$mobile-up} {
     margin-bottom: 0;
   }
 }
@@ -27,7 +27,12 @@
 }
 
 .product__info-item {
+  display: flex;
   margin-bottom: 15px;
+}
+
+.product__counter {
+  margin-right: 10px;
 }
 
 .product__price {
@@ -46,13 +51,16 @@
     font-size: 0.66em;
     font-weight: normal;
     font-family: "rouble";
-    // color: $base-color;
     color: $color-grey-172;
   }
 }
 
 .product__price-currency {
   font-size: 0;
+}
+
+.product__button {
+  min-width: auto;
 }
 
 .product__text {

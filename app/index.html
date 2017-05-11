@@ -12,20 +12,20 @@
     @@include('blocks/site-header.html')
     <main class="main">
       <div class="main__container">
-        <div class="sidebar-area">
-          <div class="sidebar">
-            <div class="sidebar__module">
-              @@include('blocks/main-nav.html')
-            </div>
-          </div>
-        </div>
+
         <div class="content-area">
           <div class="content">
             <div class="billboard">
               <div class="billboard__slider">
-                <div class="billboard__slide" style="background-image: url(//placehold.it/1280x800/db7/fff);"></div>
-                <div class="billboard__slide" style="background-image: url(//placehold.it/1280x800/d7b/fff);"></div>
-                <div class="billboard__slide" style="background-image: url(//placehold.it/1280x800/d37/fff);"></div>
+                <div class="billboard__slide">
+                  <img src="//placehold.it/1200x395/db7/fff" alt="" />
+                </div>
+                <div class="billboard__slide">
+                  <img src="//placehold.it/1200x395/d7b/fff" alt="" />
+                </div>
+                <div class="billboard__slide">
+                  <img src="//placehold.it/1200x395/d37/fff" alt="" />
+                </div>
               </div>
             </div>
 
@@ -36,34 +36,39 @@
                   <div class="product-card__inner">
                     <div class="product-card__image-frame">
                       <a class="product-card__image-holder" href="#">
-                        <img class="product-card__image" src="//placehold.it/260x170/2bb/fff" alt="" />
+                        <img class="product-card__image" src="http://shop-aventa.ru/img/products/0240210.jpg" alt="" />
                       </a>
-                      <div class="product-card__price product-card__price--old">
-                        <span class="product-card__price-value">
-                          3 000 <span class="product-card__price-currency">руб.</span>
-                        </span>
-                      </div>
                     </div>
                     <div class="product-card__info">
                       <h3 class="product-card__title"><a href="#">Меркурий (Инкотекс) Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</a></h3>
                       <div class="product-card__status">
                         Наличие: на складе
                       </div>
+                    </div>
+                    <div class="product-card__footer">
                       <div class="product-card__buying">
                         <div class="product-card__price">
                           <span class="product-card__price-value">
-                            2 655.80 <span class="product-card__price-currency">руб.</span>
+                            2 655.80<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__price product-card__price--old">
+                          <span class="product-card__price-value">
+                            3 000<span class="product-card__price-currency">руб.</span>
                           </span>
                         </div>
                         <div class="product-card__counter counter">
-                          <button class="counter__control counter__control--down" type="button">-</button>
+                          <button class="counter__control counter__control--down" type="button">&#8722;</button>
                           <input class="counter__input" type="number" name="" id="" value="1" />
                           <button class="counter__control counter__control--up" type="button">+</button>
                         </div>
                       </div>
-                    </div>
-                    <div class="product-card__footer">
-                      <button class="product-card__button button button--orange" type="submit">Добавить в корзину</button>
+                      <button class="product-card__button button button--orange" type="submit">
+                        <svg class="product-card__button-icon" width="22" height="22">
+                          <use xlink:href="img/symbols.svg#icon-cart"></use>
+                        </svg>
+                        <span class="product-card__button-label">В корзину</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -72,34 +77,39 @@
                   <div class="product-card__inner">
                     <div class="product-card__image-frame">
                       <a class="product-card__image-holder" href="#">
-                        <img class="product-card__image" src="//placehold.it/260x170/2bb/fff" alt="" />
+                        <img class="product-card__image" src="http://shop-aventa.ru/img/products/0063064.jpg" alt="" />
                       </a>
-                      <div class="product-card__price product-card__price--old">
-                        <span class="product-card__price-value">
-                          3 000 <span class="product-card__price-currency">руб.</span>
-                        </span>
-                      </div>
                     </div>
                     <div class="product-card__info">
                       <h3 class="product-card__title"><a href="#">Меркурий (Инкотекс) Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</a></h3>
                       <div class="product-card__status">
                         Наличие: на складе
                       </div>
+                    </div>
+                    <div class="product-card__footer">
                       <div class="product-card__buying">
                         <div class="product-card__price">
                           <span class="product-card__price-value">
-                            2 655.80 <span class="product-card__price-currency">руб.</span>
+                            2 655.80<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__price product-card__price--old">
+                          <span class="product-card__price-value">
+                            3 000<span class="product-card__price-currency">руб.</span>
                           </span>
                         </div>
                         <div class="product-card__counter counter">
-                          <button class="counter__control counter__control--down" type="button">-</button>
+                          <button class="counter__control counter__control--down" type="button">&#8722;</button>
                           <input class="counter__input" type="number" name="" id="" value="1" />
                           <button class="counter__control counter__control--up" type="button">+</button>
                         </div>
                       </div>
-                    </div>
-                    <div class="product-card__footer">
-                      <button class="product-card__button button button--orange" type="submit">Добавить в корзину</button>
+                      <button class="product-card__button button button--orange" type="submit">
+                        <svg class="product-card__button-icon" width="22" height="22">
+                          <use xlink:href="img/symbols.svg#icon-cart"></use>
+                        </svg>
+                        <span class="product-card__button-label">В корзину</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -108,34 +118,39 @@
                   <div class="product-card__inner">
                     <div class="product-card__image-frame">
                       <a class="product-card__image-holder" href="#">
-                        <img class="product-card__image" src="//placehold.it/260x170/2bb/fff" alt="" />
+                        <img class="product-card__image" src="http://shop-aventa.ru/img/products/0512313.JPG" alt="" />
                       </a>
-                      <div class="product-card__price product-card__price--old">
-                        <span class="product-card__price-value">
-                          3 000 <span class="product-card__price-currency">руб.</span>
-                        </span>
-                      </div>
                     </div>
                     <div class="product-card__info">
                       <h3 class="product-card__title"><a href="#">Меркурий (Инкотекс) Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</a></h3>
                       <div class="product-card__status">
                         Наличие: на складе
                       </div>
+                    </div>
+                    <div class="product-card__footer">
                       <div class="product-card__buying">
                         <div class="product-card__price">
                           <span class="product-card__price-value">
-                            2 655.80 <span class="product-card__price-currency">руб.</span>
+                            2 655.80<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__price product-card__price--old">
+                          <span class="product-card__price-value">
+                            3 000<span class="product-card__price-currency">руб.</span>
                           </span>
                         </div>
                         <div class="product-card__counter counter">
-                          <button class="counter__control counter__control--down" type="button">-</button>
+                          <button class="counter__control counter__control--down" type="button">&#8722;</button>
                           <input class="counter__input" type="number" name="" id="" value="1" />
                           <button class="counter__control counter__control--up" type="button">+</button>
                         </div>
                       </div>
-                    </div>
-                    <div class="product-card__footer">
-                      <button class="product-card__button button button--orange" type="submit">Добавить в корзину</button>
+                      <button class="product-card__button button button--orange" type="submit">
+                        <svg class="product-card__button-icon" width="22" height="22">
+                          <use xlink:href="img/symbols.svg#icon-cart"></use>
+                        </svg>
+                        <span class="product-card__button-label">В корзину</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -144,12 +159,52 @@
                   <div class="product-card__inner">
                     <div class="product-card__image-frame">
                       <a class="product-card__image-holder" href="#">
-                        <img class="product-card__image" src="//placehold.it/260x170/2bb/fff" alt="" />
+                        <img class="product-card__image" src="http://shop-aventa.ru/img/products/11380151.png" alt="" />
                       </a>
-                      <div class="product-card__price product-card__price--old">
-                        <span class="product-card__price-value">
-                          3 000 <span class="product-card__price-currency">руб.</span>
-                        </span>
+                    </div>
+                    <div class="product-card__info">
+                      <h3 class="product-card__title"><a href="#">Меркурий (Инкотекс) Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</a></h3>
+                      <div class="product-card__status">
+                        Наличие: на складе
+                      </div>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__buying">
+                        <div class="product-card__price">
+                          <span class="product-card__price-value">
+                            2 655.80<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__price product-card__price--old">
+                          <span class="product-card__price-value">
+                            3 000<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__counter counter">
+                          <button class="counter__control counter__control--down" type="button">&#8722;</button>
+                          <input class="counter__input" type="number" name="" id="" value="1" />
+                          <button class="counter__control counter__control--up" type="button">+</button>
+                        </div>
+                      </div>
+                      <button class="product-card__button button button--orange" type="submit">
+                        <svg class="product-card__button-icon" width="22" height="22">
+                          <use xlink:href="img/symbols.svg#icon-cart"></use>
+                        </svg>
+                        <span class="product-card__button-label">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cards__item product-card">
+                  <div class="product-card__inner">
+                    <div class="product-card__image-frame">
+                      <a class="product-card__image-holder" href="#">
+                        <img class="product-card__image" src="http://shop-aventa.ru/img/products/0633215.jpeg" alt="" />
+                      </a>
+                      <div class="product-card__badge-list">
+                        <div class="product-card__badge product-card__badge--new"></div>
+                        <div class="product-card__badge product-card__badge--promo"></div>
                       </div>
                     </div>
                     <div class="product-card__info">
@@ -157,21 +212,154 @@
                       <div class="product-card__status">
                         Наличие: на складе
                       </div>
+                    </div>
+                    <div class="product-card__footer">
                       <div class="product-card__buying">
                         <div class="product-card__price">
                           <span class="product-card__price-value">
-                            2 655.80 <span class="product-card__price-currency">руб.</span>
+                            2 655.80<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__price product-card__price--old">
+                          <span class="product-card__price-value">
+                            3 000<span class="product-card__price-currency">руб.</span>
                           </span>
                         </div>
                         <div class="product-card__counter counter">
-                          <button class="counter__control counter__control--down" type="button">-</button>
+                          <button class="counter__control counter__control--down" type="button">&#8722;</button>
                           <input class="counter__input" type="number" name="" id="" value="1" />
                           <button class="counter__control counter__control--up" type="button">+</button>
                         </div>
                       </div>
+                      <button class="product-card__button button button--orange" type="submit">
+                        <svg class="product-card__button-icon" width="22" height="22">
+                          <use xlink:href="img/symbols.svg#icon-cart"></use>
+                        </svg>
+                        <span class="product-card__button-label">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cards__item product-card">
+                  <div class="product-card__inner">
+                    <div class="product-card__image-frame">
+                      <a class="product-card__image-holder" href="#">
+                        <img class="product-card__image" src="http://shop-aventa.ru/img/products/080504.jpg" alt="" />
+                      </a>
+                    </div>
+                    <div class="product-card__info">
+                      <h3 class="product-card__title"><a href="#">Меркурий (Инкотекс) Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</a></h3>
+                      <div class="product-card__status">
+                        Наличие: на складе
+                      </div>
                     </div>
                     <div class="product-card__footer">
-                      <button class="product-card__button button button--orange" type="submit">Добавить в корзину</button>
+                      <div class="product-card__buying">
+                        <div class="product-card__price">
+                          <span class="product-card__price-value">
+                            2 655.80<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__price product-card__price--old">
+                          <span class="product-card__price-value">
+                            3 000<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__counter counter">
+                          <button class="counter__control counter__control--down" type="button">&#8722;</button>
+                          <input class="counter__input" type="number" name="" id="" value="1" />
+                          <button class="counter__control counter__control--up" type="button">+</button>
+                        </div>
+                      </div>
+                      <button class="product-card__button button button--orange" type="submit">
+                        <svg class="product-card__button-icon" width="22" height="22">
+                          <use xlink:href="img/symbols.svg#icon-cart"></use>
+                        </svg>
+                        <span class="product-card__button-label">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cards__item product-card">
+                  <div class="product-card__inner">
+                    <div class="product-card__image-frame">
+                      <a class="product-card__image-holder" href="#">
+                        <img class="product-card__image" src="http://shop-aventa.ru/img/products/113504.jpg" alt="" />
+                      </a>
+                    </div>
+                    <div class="product-card__info">
+                      <h3 class="product-card__title"><a href="#">Меркурий (Инкотекс) Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</a></h3>
+                      <div class="product-card__status">
+                        Наличие: на складе
+                      </div>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__buying">
+                        <div class="product-card__price">
+                          <span class="product-card__price-value">
+                            2 655.80<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__price product-card__price--old">
+                          <span class="product-card__price-value">
+                            3 000<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__counter counter">
+                          <button class="counter__control counter__control--down" type="button">&#8722;</button>
+                          <input class="counter__input" type="number" name="" id="" value="1" />
+                          <button class="counter__control counter__control--up" type="button">+</button>
+                        </div>
+                      </div>
+                      <button class="product-card__button button button--orange" type="submit">
+                        <svg class="product-card__button-icon" width="22" height="22">
+                          <use xlink:href="img/symbols.svg#icon-cart"></use>
+                        </svg>
+                        <span class="product-card__button-label">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cards__item product-card">
+                  <div class="product-card__inner">
+                    <div class="product-card__image-frame">
+                      <a class="product-card__image-holder" href="#">
+                        <img class="product-card__image" src="http://shop-aventa.ru/img/products/0019520.jpg" alt="" />
+                      </a>
+                    </div>
+                    <div class="product-card__info">
+                      <h3 class="product-card__title"><a href="#">Меркурий (Инкотекс) Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</a></h3>
+                      <div class="product-card__status">
+                        Наличие: на складе
+                      </div>
+                    </div>
+                    <div class="product-card__footer">
+                      <div class="product-card__buying">
+                        <div class="product-card__price">
+                          <span class="product-card__price-value">
+                            2 655.80<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__price product-card__price--old">
+                          <span class="product-card__price-value">
+                            3 000<span class="product-card__price-currency">руб.</span>
+                          </span>
+                        </div>
+                        <div class="product-card__counter counter">
+                          <button class="counter__control counter__control--down" type="button">&#8722;</button>
+                          <input class="counter__input" type="number" name="" id="" value="1" />
+                          <button class="counter__control counter__control--up" type="button">+</button>
+                        </div>
+                      </div>
+                      <button class="product-card__button button button--orange" type="submit">
+                        <svg class="product-card__button-icon" width="22" height="22">
+                          <use xlink:href="img/symbols.svg#icon-cart"></use>
+                        </svg>
+                        <span class="product-card__button-label">В корзину</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -181,6 +369,13 @@
             <section class="section-products">
               <h2 class="section-products__title">Хиты продаж</h2>
             </section>
+          </div>
+        </div>
+        <div class="sidebar-area">
+          <div class="sidebar">
+            <div class="sidebar__module">
+              @@include('blocks/main-nav.html')
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 .main-nav {
   position: relative;
   z-index: 2;
+  margin-top: -15px;
   padding-top: 15px;
   text-align: center;
 
@@ -34,21 +35,27 @@
 .main-nav__list {
   @include clear-list();
 
-  position: absolute;
-  transform-origin: 50% 0;
-  transform: scale(0.85);
   text-align: left;
-  opacity: 0;
-  visibility: hidden;
   background-color: #fff;
   transition: opacity $duration, transform $duration, visibility 0s $duration;
+
+  @media #{$tablet-up} {
+    position: absolute;
+    transform-origin: 50% 0;
+    transform: scale(0.85);
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .main-nav--opened .main-nav__list {
-  transform: scale(1);
-  opacity: 1;
-  visibility: visible;
-  transition: opacity $duration, transform $duration, visibility $duration;
+
+  @media #{$tablet-up} {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity $duration, transform $duration, visibility $duration;
+  }
 }
 
 .main-nav__item {
@@ -58,27 +65,30 @@
 .main-nav__link {
   display: flex;
   align-items: center;
-  padding: 6px;
-  padding-right: 30px;
+  padding: 6px !important;
+  padding-right: 30px !important;
   font-size: 12px;
   color: #777;
   text-decoration: none;
   border-bottom: 1px solid $color-grey-224;
   transition: $duration;
+  cursor: default;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 10px;
-    transform: rotate(45deg);
-    width: 7px;
-    height: 7px;
-    margin: auto;
-    border-top: 1px solid;
-    border-right: 1px solid;
-    transition: $duration;
+  @media #{$tablet-up} {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      transform: rotate(45deg);
+      width: 7px;
+      height: 7px;
+      margin: auto;
+      border-top: 1px solid;
+      border-right: 1px solid;
+      transition: $duration;
+    }
   }
 }
 
@@ -86,32 +96,41 @@
   color: #111;
   background-color: #fff;
 
-  &::after {
-    transform: rotate(45deg) scale(1);
-    border-color: #111;
+  @media #{$tablet-up} {
+    &::after {
+      transform: rotate(45deg) scale(1);
+      border-color: #111;
+    }
   }
 }
 
 .main-nav__icon {
   flex-shrink: 0;
+  display: inline-block;
   width: 24px;
   height: 24px;
   margin-right: 10px;
   color: $primary-color;
+  vertical-align: middle;
   fill: currentColor;
 }
 
-.main-nav__drop {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-10px) scale(0.9);
-  transform-origin: 0 0;
-  transition: opacity $duration, transform $duration, visibility 0s $duration;
-}
+@media #{$tablet-up} {
+  .main-nav__drop {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translateX(-10px) scale(0.9);
+    transform-origin: 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $duration, transform $duration, visibility 0s $duration;
+  }
 
-.main-nav__item:hover .main-nav__drop {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition: opacity 0.25s, transform 0.25s;
+  .main-nav__item:hover .main-nav__drop {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.25s, transform 0.25s;
+  }
 }

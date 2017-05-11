@@ -25,7 +25,12 @@
   }
 }
 
+.cart__item-label-image {
+  // display: none;
+}
+
 .cart__item-image {
+  // display: none;
   min-width: 75px;
   max-width: 100px;
 }
@@ -117,6 +122,7 @@
 
 .cart__totals-value {
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .cart__totals-item--primary .cart__totals-value {
