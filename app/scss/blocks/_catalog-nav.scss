@@ -1,4 +1,4 @@
-.main-nav {
+.catalog-nav {
   position: relative;
   z-index: 2;
   margin-top: -15px;
@@ -10,7 +10,7 @@
   }
 }
 
-.main-nav__toggle {
+.catalog-nav__toggle {
   @include createButton();
 
   margin-bottom: 15px;
@@ -32,7 +32,7 @@
   }
 }
 
-.main-nav__list {
+.catalog-nav__list {
   @include clear-list();
 
   text-align: left;
@@ -48,7 +48,7 @@
   }
 }
 
-.main-nav--opened .main-nav__list {
+.catalog-nav--opened .catalog-nav__list {
 
   @media #{$tablet-up} {
     transform: scale(1);
@@ -58,11 +58,11 @@
   }
 }
 
-.main-nav__item {
+.catalog-nav__item {
   position: relative;
 }
 
-.main-nav__link {
+.catalog-nav__link {
   display: flex;
   align-items: center;
   padding: 6px !important;
@@ -92,7 +92,7 @@
   }
 }
 
-.main-nav__item:hover .main-nav__link {
+.catalog-nav__item:hover .catalog-nav__link {
   color: #111;
   background-color: #fff;
 
@@ -104,7 +104,7 @@
   }
 }
 
-.main-nav__icon {
+.catalog-nav__icon {
   flex-shrink: 0;
   display: inline-block;
   width: 24px;
@@ -116,7 +116,7 @@
 }
 
 @media #{$tablet-up} {
-  .main-nav__drop {
+  .catalog-nav__drop {
     position: absolute;
     top: 0;
     left: 100%;
@@ -127,7 +127,7 @@
     transition: opacity $duration, transform $duration, visibility 0s $duration;
   }
 
-  .main-nav__item:hover .main-nav__drop {
+  .catalog-nav__item:hover .catalog-nav__drop {
     opacity: 1;
     visibility: visible;
     transform: none;

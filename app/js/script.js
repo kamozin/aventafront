@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var body = document.body;
   var contentArea = document.querySelector('.content-area');
   var main = document.querySelector('.main');
-  var mainNav = document.querySelector('.main-nav');
+  var mainNav = document.querySelector('.catalog-nav');
 
   function toggleMainNavOverlay(event) {
-    if (mainNav.classList.contains('main-nav--opened')) {
+    if (mainNav.classList.contains('catalog-nav--opened')) {
       main.classList.toggle('main--overlay');
     }
   }
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (mainNav) {
     if ((matchMedia('(min-width: 768px)').matches)) {
       // Desktop menu
-      var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
-      var mainNavList = mainNav.querySelector('.main-nav__list');
+      var mainNavToogle = mainNav.querySelector('.catalog-nav__toggle');
+      var mainNavList = mainNav.querySelector('.catalog-nav__list');
 
       setContentAreaHeight(mainNavList, contentArea);
 
@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       if (body.classList.contains('homepage')) {
-        mainNav.classList.toggle('main-nav--opened');
+        mainNav.classList.toggle('catalog-nav--opened');
         mainNavToogle.classList.toggle('is-active');
       } else {
         mainNavToogle.addEventListener('click', function(event) {
-          mainNav.classList.toggle('main-nav--opened');
+          mainNav.classList.toggle('catalog-nav--opened');
           main.classList.toggle('main--overlay');
           mainNavToogle.classList.toggle('is-active');
         });
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     } else {
       // Mobile menu
-      $('.main-nav__wrapper').mmenu({
+      $('.catalog-nav__wrapper').mmenu({
         navbar: {
           title: "Каталог продукции"
         }
