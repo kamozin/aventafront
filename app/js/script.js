@@ -63,6 +63,71 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+  $(window).on('resize', function() {
+    productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
+    $productCard.each(recalculateProductCardHeight);
+  });
+
+  function recalculateProductCardHeight() {
+    debugger;
+    if ($(this).closest('.cards').hasClass('cards--mode-list') && matchMedia('(min-width: 992px)').matches) {
+      return
+    }
+    $(this).height(productCardHeight);
+  }
+
+  function resetProductCardHeight() {
+    $(this).height('auto');
+  }
+
+
+  /*=====  End of Product cards height  ======*/
+
+
+  /*=================================================
+  =            Layout mode product cards            =
+  =================================================*/
+
+  var $cards = $('.cards');
+  var $productCard = $('.product-card');
+  var layoutProductCards = localStorage.getItem('layoutProductCards');
+  var $catalogMode = $('.catalog-mode');
+  var $catalogModeItems = $('.catalog-mode__item');
+  var productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
+
+  $catalogMode.on('click', '.catalog-mode__item', function(event) {
+    event.preventDefault();
+    $catalogModeItems.removeClass('catalog-mode__item--active');
+    $(this).addClass('catalog-mode__item--active');
+    var layoutProductCards = this.dataset.layoutMode;
+    localStorage.setItem('layoutProductCards', layoutProductCards);
+    $cards.attr('class', 'cards cards--mode-' + layoutProductCards);
+    if (layoutProductCards === 'tile') {
+      $productCard.each(recalculateProductCardHeight);
+    } else {
+      $productCard.each(resetProductCardHeight);
+    }
+    console.log(layoutProductCards);
+  });
+
+  console.log(layoutProductCards);
+
+  if (!layoutProductCards || layoutProductCards === 'tile') {
+    $cards.attr('class', 'cards');
+    $catalogModeItems.filter('[data-layout-mode="tile"]').addClass('catalog-mode__item--active');
+  } else {
+    $cards.attr('class', 'cards cards--mode-' + layoutProductCards);
+    $catalogModeItems.filter('[data-layout-mode="'+layoutProductCards+'"]').addClass('catalog-mode__item--active');
+  }
+
+  $productCard.each(recalculateProductCardHeight);
+
+  /*=====  End of Layout mode product cards  ======*/
+
+
+
+
   /*============================
   =            Tabs            =
   ============================*/
@@ -98,28 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  /*============================================
-  =            Product cards height            =
-  ============================================*/
-
-  var $productCard = $('.product-card');
-  var productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
-
-  $productCard.each(recalculateProductCardHeight);
-
-  $(window).on('resize', function() {
-    productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
-    $productCard.each(recalculateProductCardHeight);
-  });
-
-  function recalculateProductCardHeight() {
-    if ($(this).closest('.cards').hasClass('cards--mode-list') && matchMedia('(min-width: 992px)').matches) {
-      return
-    }
-    $(this).height(productCardHeight);
-  }
-
-  /*=====  End of Product cards height  ======*/
 
 
 

@@ -9,12 +9,10 @@
 .product-card__inner {
   padding: 15px;
   background-color: #fff;
-  border: 1px solid #e7e7e7;
+  // border: 1px solid #e7e7e7;
   box-sizing: border-box;
+  box-shadow: 0 1px 1px rgba(#000, 0.1);
   transition: $duration;
-
-  .cards--mode-list & {
-  }
 
   @media #{$laptop-up} {
     .cards--mode-list & {
@@ -26,7 +24,7 @@
 }
 
 .product-card:hover .product-card__inner {
-  box-shadow: 0 3px 6px rgba(#000, 0.2);
+  box-shadow: 0 3px 6px rgba(#000, 0.3);
 }
 
 .product-card__image-frame {
