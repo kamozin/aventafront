@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function recalculateProductCardHeight() {
-    debugger;
     if ($(this).closest('.cards').hasClass('cards--mode-list') && matchMedia('(min-width: 992px)').matches) {
       return
     }
@@ -108,10 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       $productCard.each(resetProductCardHeight);
     }
-    console.log(layoutProductCards);
   });
 
-  console.log(layoutProductCards);
 
   if (!layoutProductCards || layoutProductCards === 'tile') {
     $cards.attr('class', 'cards');

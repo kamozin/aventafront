@@ -49,6 +49,29 @@
 .product-card__image {
 }
 
+.product-card__sticker {
+  position: absolute;
+  top: ($grid-gutter * -1px);
+  right: ($grid-gutter * -1px);
+  width: 72px;
+  height: 72px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #34d;
+  border-radius: 50%;
+  pointer-events: none;
+
+  &--promo {
+    background-color: #8d7;
+    background-image: url("../../img/product-stickers/product-stickers_promo.svg");
+  }
+
+  &--discount {
+    background-color: #78d;
+    background-image: url("../../img/product-stickers/product-stickers_discount.svg");
+  }
+}
+
 .product-card__info {
   margin-bottom: 15px;
 
