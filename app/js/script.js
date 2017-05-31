@@ -4,44 +4,44 @@ document.addEventListener('DOMContentLoaded', function() {
   var body = document.body;
   var contentArea = document.querySelector('.content-area');
   var main = document.querySelector('.main');
-  var mainNav = document.querySelector('.catalog-nav');
+  var catalogNav = document.querySelector('.catalog-nav');
 
-  function toggleMainNavOverlay(event) {
-    if (mainNav.classList.contains('catalog-nav--opened')) {
+  function togglecatalogNavOverlay(event) {
+    if (catalogNav.classList.contains('catalog-nav--opened')) {
       main.classList.toggle('main--overlay');
     }
   }
 
-  function setContentAreaHeight(mainNavList, contentArea) {
-    var mainNavListHeight = mainNavList.offsetHeight;
-    contentArea.style.minHeight = mainNavListHeight + 'px';
+  function setContentAreaHeight(catalogNavList, contentArea) {
+    var catalogNavListHeight = catalogNavList.offsetHeight;
+    contentArea.style.minHeight = catalogNavListHeight + 'px';
   }
 
-  if (mainNav) {
+  if (catalogNav) {
     if ((matchMedia('(min-width: 768px)').matches)) {
       // Desktop menu
-      var mainNavToogle = mainNav.querySelector('.catalog-nav__toggle');
-      var mainNavList = mainNav.querySelector('.catalog-nav__list');
+      var catalogNavToogle = catalogNav.querySelector('.catalog-nav__toggle');
+      var catalogNavList = catalogNav.querySelector('.catalog-nav__list');
 
-      setContentAreaHeight(mainNavList, contentArea);
+      setContentAreaHeight(catalogNavList, contentArea);
 
-      mainNavToogle.addEventListener('click', function(event) {
+      catalogNavToogle.addEventListener('click', function(event) {
         event.preventDefault();
       });
 
       if (body.classList.contains('homepage')) {
-        mainNav.classList.toggle('catalog-nav--opened');
-        mainNavToogle.classList.toggle('is-active');
+        catalogNav.classList.toggle('catalog-nav--opened');
+        catalogNavToogle.classList.toggle('is-active');
       } else {
-        mainNavToogle.addEventListener('click', function(event) {
-          mainNav.classList.toggle('catalog-nav--opened');
+        catalogNavToogle.addEventListener('click', function(event) {
+          catalogNav.classList.toggle('catalog-nav--opened');
           main.classList.toggle('main--overlay');
-          mainNavToogle.classList.toggle('is-active');
+          catalogNavToogle.classList.toggle('is-active');
         });
       }
 
-      mainNav.addEventListener('mouseover', toggleMainNavOverlay);
-      mainNav.addEventListener('mouseout', toggleMainNavOverlay);
+      catalogNav.addEventListener('mouseover', togglecatalogNavOverlay);
+      catalogNav.addEventListener('mouseout', togglecatalogNavOverlay);
 
     } else {
       // Mobile menu
