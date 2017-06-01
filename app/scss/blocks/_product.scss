@@ -19,7 +19,13 @@
 }
 
 .product__image-holder {
-  @include fitObject(400, 260);
+  // @include fitObject(400, 260);
+  position: relative;
+
+  img {
+    width: 100%;
+
+  }
 }
 
 .product__info {
@@ -31,19 +37,33 @@
   margin-bottom: 15px;
 }
 
-.product__counter {
-  margin-right: 10px;
+.product__buying {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  text-align: left;
 }
 
 .product__price {
+  flex-grow: 1;
+  margin-right: 5px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-family: 'Open Sans Condensed', sans-serif;
 
   &--old {
-
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: -0.5em;
+    font-weight: normal;
   }
+
 }
 
 .product__price-value {
-  font-size: 21px;
+  font-size: 24px;
   color: $primary-color;
 
   &::after {
@@ -54,6 +74,52 @@
     color: $color-grey-172;
   }
 }
+
+.product__price--old .product__price-value {
+  position: relative;
+  font-size: 17px;
+  font-weight: 600;
+  color: $color-grey-172;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid;
+    transform: rotate(-10deg);
+  }
+}
+
+
+.product__counter {
+  margin-right: 10px;
+}
+
+// .product__price {
+
+//   &--old {
+
+//   }
+// }
+
+// .product__price-value {
+//   font-size: 21px;
+//   color: $primary-color;
+
+//   &::after {
+//     content: "\E007";
+//     font-size: 0.66em;
+//     font-weight: normal;
+//     font-family: "rouble";
+//     color: $color-grey-172;
+//   }
+// }
 
 .product__price-currency {
   font-size: 0;
