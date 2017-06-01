@@ -35,6 +35,10 @@
   }
 }
 
+.searchbar__select-holder {
+  display: none !important;
+}
+
 .searchbar__select {
   width: auto;
   font-size: $font-size--small;
