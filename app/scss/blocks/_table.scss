@@ -36,3 +36,42 @@ tbody {
     }
   }
 }
+
+@media (max-width: 568px) {
+  .response-table {
+    thead {
+      display: none;
+    }
+
+    tbody {
+      tr {
+
+        border-top: 4px solid $color-grey-224;
+        border-bottom: 4px solid $color-grey-224;
+      }
+
+      td {
+        max-width: none;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: attr(data-th)': ';
+          display: block;
+          width: 82px;
+          flex-shrink: 0;
+          font-weight: 600;
+          font-size: $font-size--small;
+          font-family: 'Open Sans Condensed', sans-serif;
+          text-align: left;
+        }
+      }
+    }
+
+    tfoot {
+      td:empty {
+        display: none;
+      }
+    }
+  }
+}
