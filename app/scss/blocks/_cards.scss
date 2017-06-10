@@ -1,14 +1,14 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: ($grid-gutter * 2px);
 }
 
 .cards__item {
-  flex-grow: 1;
-  box-sizing: border-box;
-
-  border: 1px solid #f7f7f7;
+  width: 100%;
   margin-bottom: 10px;
+  border: 1px solid #f7f7f7;
+  box-sizing: border-box;
 
   .cards--mode-list & {
 
