@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
-  padding: 5px;
+  padding: ($grid-gutter * 1px);
   font-weight: 600;
   line-height: 30px;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -19,12 +19,12 @@
   li {
 
     &:first-child {
-      margin-right: auto;
+      margin-right: 1em;
       font-size: 1.5em;
     }
 
     &:last-child {
-      margin-left: auto;
+      margin-left: 1em;
       font-size: 1.5em;
     }
   }
@@ -35,7 +35,8 @@
 
   a {
     display: block;
-    padding: 0 em(12);
+    padding: 0 em(10);
+    color: $accent-color;
 
     &:hover,
     &:focus {
@@ -49,7 +50,7 @@
   }
 
   .active span {
-    padding: 0 em(12);
+    padding: 0 em(10);
     color: #fff;
     background-color: $accent-color;
     border-radius: $border-radius;
