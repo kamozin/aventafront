@@ -1,0 +1,57 @@
+.pagination {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  padding: 5px;
+  font-weight: 600;
+  line-height: 30px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: $border-radius;
+  background-color: #fff;
+
+  @media #{$laptop-up} {
+    font-size: $font-size--large;
+  }
+
+  li {
+
+    &:first-child {
+      margin-right: auto;
+      font-size: 1.5em;
+    }
+
+    &:last-child {
+      margin-left: auto;
+      font-size: 1.5em;
+    }
+  }
+
+  .active {
+
+  }
+
+  a {
+    display: block;
+    padding: 0 em(12);
+
+    &:hover,
+    &:focus {
+      color: $primary-color;
+    }
+  }
+
+  span {
+    display: block;
+    color: $muted-color;
+  }
+
+  .active span {
+    padding: 0 em(12);
+    color: #fff;
+    background-color: $accent-color;
+    border-radius: $border-radius;
+  }
+}
