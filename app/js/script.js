@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
   var body = document.body;
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       setContentAreaHeight(catalogNavList, contentArea);
 
-      catalogNavToogle.addEventListener('click', function(event) {
+      catalogNavToogle.addEventListener('click', function (event) {
         event.preventDefault();
       });
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         catalogNav.classList.toggle('catalog-nav--opened');
         catalogNavToogle.classList.toggle('is-active');
       } else {
-        catalogNavToogle.addEventListener('click', function(event) {
+        catalogNavToogle.addEventListener('click', function (event) {
           catalogNav.classList.toggle('catalog-nav--opened');
           main.classList.toggle('main--overlay');
           catalogNavToogle.classList.toggle('is-active');
@@ -64,14 +64,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  $(window).on('resize', function() {
+  $(window).on('resize', function () {
     productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
     $productCard.each(recalculateProductCardHeight);
   });
 
   function recalculateProductCardHeight() {
-    if ($(this).closest('.cards').hasClass('cards--mode-list') && matchMedia('(min-width: 992px)').matches) {
-      return
+    if ($(this).closest('.cards').not('.cards--not-affect').hasClass('cards--mode-list') && matchMedia('(min-width: 992px)').matches) {
+      return;
     }
     $(this).height(productCardHeight);
   }
@@ -95,13 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
   var $catalogModeItems = $('.catalog-mode__item');
   var productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
 
-  $catalogMode.on('click', '.catalog-mode__item', function(event) {
+  $catalogMode.on('click', '.catalog-mode__item', function (event) {
     event.preventDefault();
     $catalogModeItems.removeClass('catalog-mode__item--active');
     $(this).addClass('catalog-mode__item--active');
     var layoutProductCards = this.dataset.layoutMode;
     localStorage.setItem('layoutProductCards', layoutProductCards);
-    $cards.attr('class', 'cards cards--mode-' + layoutProductCards);
+    $cards.not('.cards--not-affect').attr('class', 'cards cards--mode-' + layoutProductCards);
     if (layoutProductCards === 'tile') {
       $productCard.each(recalculateProductCardHeight);
     } else {
@@ -111,11 +111,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   if (!layoutProductCards || layoutProductCards === 'tile') {
-    $cards.attr('class', 'cards');
+    $cards.not('.cards--not-affect').attr('class', 'cards');
     $catalogModeItems.filter('[data-layout-mode="tile"]').addClass('catalog-mode__item--active');
   } else {
-    $cards.attr('class', 'cards cards--mode-' + layoutProductCards);
-    $catalogModeItems.filter('[data-layout-mode="'+layoutProductCards+'"]').addClass('catalog-mode__item--active');
+    $cards.not('.cards--not-affect').attr('class', 'cards cards--mode-' + layoutProductCards);
+    $catalogModeItems.filter('[data-layout-mode="' + layoutProductCards + '"]').addClass('catalog-mode__item--active');
   }
 
   $productCard.each(recalculateProductCardHeight);
@@ -139,9 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
   =            Product button            =
   ======================================*/
 
-  var $cards = $('.cards');
+  // var $cards = $('.cards');
 
-  $cards.on('click', '.product-card__button', function(event) {
+  $cards.on('click', '.product-card__button', function (event) {
     event.preventDefault();
     var $self = $(this);
     var $productCard = $(this).closest('.product-card');
@@ -171,7 +171,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if ($catalogFilter.length) {
     $catalogFilter.collapse({
-      query: ".catalog-filter__caption"
+      query: ".catalog-filter__caption",
+      open: function () {
+        this.slideDown(300);
+      },
+      close: function () {
+        this.slideUp(300);
+      },
     });
   }
 
@@ -179,48 +185,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-/*===========================================
-=            Filter range slider            =
-===========================================*/
+  /*===========================================
+  =            Filter range slider            =
+  ===========================================*/
 
-var filterIntervalItems = document.querySelectorAll('.filter-interval');
+  var filterIntervalItems = document.querySelectorAll('.filter-interval');
 
-if (filterIntervalItems.length) {
-  Array.prototype.forEach.call(filterIntervalItems, function(filterInterval) {
-    var slider = filterInterval.querySelector('.filter-interval__slider');
-    var inputMin = filterInterval.querySelector('.filter-interval__input--min');
-    var inputMax = filterInterval.querySelector('.filter-interval__input--max');
-    var inputs = [inputMin, inputMax];
+  if (filterIntervalItems.length) {
+    Array.prototype.forEach.call(filterIntervalItems, function (filterInterval) {
+      var slider = filterInterval.querySelector('.filter-interval__slider');
+      var inputMin = filterInterval.querySelector('.filter-interval__input--min');
+      var inputMax = filterInterval.querySelector('.filter-interval__input--max');
+      var inputs = [inputMin, inputMax];
 
-    function setSliderHandle(i, value) {
-      var r = [null,null];
-      r[i] = value;
-      slider.noUiSlider.set(r);
-    }
-
-    noUiSlider.create(slider, {
-      start: [inputMin.value, inputMax.value],
-      connect: true,
-      range: {
-        'min': parseFloat(inputMin.value),
-        'max': parseFloat(inputMax.value)
+      function setSliderHandle(i, value) {
+        var r = [null, null];
+        r[i] = value;
+        slider.noUiSlider.set(r);
       }
-    });
 
-    slider.noUiSlider.on('update', function(values, handle) {
-      inputs[handle].value = values[handle];
-    });
+      noUiSlider.create(slider, {
+        start: [inputMin.value, inputMax.value],
+        connect: true,
+        range: {
+          'min': parseFloat(inputMin.value),
+          'max': parseFloat(inputMax.value)
+        }
+      });
 
-    inputs.forEach(function(input, handle) {
-      input.addEventListener('change', function(){
-        setSliderHandle(handle, this.value);
-        // slider.noUiSlider.set([null, this.value]);
+      slider.noUiSlider.on('update', function (values, handle) {
+        inputs[handle].value = values[handle];
+      });
+
+      inputs.forEach(function (input, handle) {
+        input.addEventListener('change', function () {
+          setSliderHandle(handle, this.value);
+          // slider.noUiSlider.set([null, this.value]);
+        });
       });
     });
-  });
-}
+  }
 
-/*=====  End of Filter range slider  ======*/
+  /*=====  End of Filter range slider  ======*/
 
 
 
