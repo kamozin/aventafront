@@ -36,7 +36,14 @@
 }
 
 .site-footer__top-nav {
+  .top-nav__link {
+    color: #fff;
 
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+    }
+  }
 }
 
 .site-footer__copy {

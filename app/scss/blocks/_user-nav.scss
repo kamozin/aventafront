@@ -19,14 +19,14 @@
   justify-content: center;
   padding: ($grid-gutter * 1px);
   font-size: $font-size--small;
-  color: #fff;
+  color: $base-color;
   text-decoration: none;
   transition: $duration;
 
   &:hover,
   &:focus {
     color: #fff;
-    background-color: rgba(#000, 0.5);
+    background-color: $accent-color;
   }
 
   @media #{$mobile-up} {
