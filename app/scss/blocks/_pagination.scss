@@ -1,36 +1,29 @@
 .pagination {
   @include clear-list();
+  @include make-box();
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
-  padding: ($grid-gutter * 1px);
   font-weight: 600;
   line-height: 30px;
   font-family: 'Open Sans Condensed', sans-serif;
-  border-radius: $border-radius;
-  background-color: #fff;
-
-  @media #{$laptop-up} {
-    font-size: $font-size--large;
-  }
 
   li {
-
     &:first-child {
+      width: auto;
       margin-right: 1em;
+      order: 0;
       font-size: 1.5em;
     }
 
     &:last-child {
+      width: auto;
       margin-left: 1em;
+      order: 0;
       font-size: 1.5em;
     }
-  }
-
-  .active {
-
   }
 
   a {
@@ -54,5 +47,9 @@
     color: #fff;
     background-color: $accent-color;
     border-radius: $border-radius;
+  }
+
+  @media #{$laptop-up} {
+    font-size: $font-size--large;
   }
 }
