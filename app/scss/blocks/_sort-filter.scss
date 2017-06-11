@@ -1,6 +1,8 @@
 .sort-filter {
-  user-select: none;
+  @include make-box();
+
   margin-bottom: ($grid-gutter * 3px);
+  user-select: none;
 
   @media #{$mobile-up} {
     display: flex;
