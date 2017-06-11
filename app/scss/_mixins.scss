@@ -49,8 +49,10 @@
   list-style: none;
 }
 
-@mixin border-rounded($value: 2px) {
-  border-radius: $value;
+@mixin make-box() {
+  padding: ($grid-gutter * 1.5px);
+  background-color: #fff;
+  border-radius: $border-radius;
 }
 
 /// Подстраивание изображений (и не только) под заданные пропорции
