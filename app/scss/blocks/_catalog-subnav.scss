@@ -1,15 +1,15 @@
 @media #{$tablet-up} {
-  .main-subnav {
+  .catalog-subnav {
     @include clear-list();
     background-color: #fff;
     border-radius: 0 3px 3px 0;
   }
 
-  .main-subnav__item {
+  .catalog-subnav__item {
     white-space: nowrap;
   }
 
-  .main-subnav__link {
+  .catalog-subnav__link {
     display: block;
     padding: 5px 10px;
     font-size: 13px;
@@ -17,7 +17,7 @@
     transition: $duration;
   }
 
-  .main-subnav__item:hover .main-subnav__link {
+  .catalog-subnav__item:hover .catalog-subnav__link {
     color: #111;
     // background-color: #fff;
   }

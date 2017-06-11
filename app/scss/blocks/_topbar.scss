@@ -1,9 +1,7 @@
 .topbar {
-  // display: none;
   position: relative;
   z-index: 2;
-  background-color: $secondary-color;
-  color: #fff;
+  background-color: #fff;
 }
 
 .topbar__inner {
@@ -23,13 +21,8 @@
     display: inline-flex;
     font-size: 0;
     align-items: center;
-    color: #fff;
+    color: $base-color;
     transition: $duration;
-
-    &:hover,
-    &:focus {
-      color: #efefef;
-    }
   }
 
   @media #{$laptop-up} {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,13 @@
   <title>Страница продукта</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="site-wrapper">
     @@include('blocks/site-header.html')
     <!-- main--overlay — показывает оверлей при наведении на main-nav__list -->
     <main class="main">
       <div class="main__container">
-        <div class="sidebar-area">
-          <div class="sidebar">
-            <div class="sidebar__module">
-              <!-- <a href="#main-nav">Каталог</a> -->
-              @@include('blocks/main-nav.html')
-            </div>
-          </div>
-        </div>
         <div class="content-area">
           <div class="content product">
             <h1 class="page-title">Изолятор керамический Villaris коричневый, V&nbsp;2000002</h1>
@@ -41,6 +35,7 @@
               <div class="product__column col-mobile-up-6 col-tablet-up-12 col-laptop-up-6">
                 <div class="product__image-holder">
                   <img class="product__image" src="//placehold.it/400x262/098/fff" alt="" />
+                  <div class="sticker sticker--promo"></div>
                 </div>
               </div>
               <div class="product__column col-mobile-up-6 col-tablet-up-12 col-laptop-up-6">
@@ -56,13 +51,25 @@
                     </div>
                   </div>
                   <div class="product__info-item">
-                    <div class="product__price">
+                    <!-- <div class="product__price">
                       <span class="product__price-text">
                         Цена:
                       </span>
                       <span class="product__price-value">
                         2 655.80<span class="product__price-currency">руб.</span>
                       </span>
+                    </div> -->
+                    <div class="product__buying">
+                      <div class="product__price">
+                        <span class="product__price-value">
+                          2 655.80<span class="product__price-currency">руб.</span>
+                        </span>
+                      </div>
+                      <div class="product__price product__price--old">
+                        <span class="product__price-value">
+                          3 000<span class="product__price-currency">руб.</span>
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div class="product__info-item">
@@ -102,9 +109,17 @@
             </div>
           </div>
         </div>
+        <div class="sidebar-area">
+          <div class="sidebar">
+            <div class="sidebar__module">
+              @@include('blocks/catalog-nav.html')
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
   @@include('blocks/site-footer.html')
 </body>
+
 </html>

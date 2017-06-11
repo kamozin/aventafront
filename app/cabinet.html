@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>Личный кабинет</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="site-wrapper">
     @@include('blocks/site-header.html')
@@ -15,146 +17,146 @@
         <div class="content-area">
           <div class="content">
             <h1 class="page-title">Личный кабинет</h1>
-              <div class='tabs'>
-                <ul class='tabs__menu'>
-                  <li class="tabs__menu-item">
-                    <a class="tabs__menu-link" href="#tab-private-info">Личные данные</a>
-                  </li>
-                  <li class="tabs__menu-item">
-                    <a class="tabs__menu-link" href="#tab-history-orders">История заказов</a>
-                  </li>
-                </ul>
-                <div class="tabs__pane" id='tab-private-info'>
-                  <!-- <h2>Личные данные</h2> -->
-                  <div class="row">
-                    <form class="private-info-form col-tablet-up-10" action="" method="post">
-                      <fieldset class="private-info-form__section">
-                        <label class="form-item row">
+            <div class='tabs'>
+              <ul class='tabs__menu'>
+                <li class="tabs__menu-item">
+                  <a class="tabs__menu-link" href="#tab-private-info">Личные данные</a>
+                </li>
+                <li class="tabs__menu-item">
+                  <a class="tabs__menu-link" href="#tab-history-orders">История заказов</a>
+                </li>
+              </ul>
+              <div class="tabs__pane" id='tab-private-info'>
+                <!-- <h2>Личные данные</h2> -->
+                <div class="row">
+                  <form class="private-info-form col-tablet-up-10" action="" method="post">
+                    <fieldset class="private-info-form__section">
+                      <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Имя, Фамилия получателя:</span>
                           <div class="col-tablet-up-8">
                             <input type="text" class="form-control" name="fio" autocomplete="name" placeholder="Иван Иванов" required />
                           </div>
                         </label>
-                        <label class="form-item row">
+                      <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Телефон:</span>
                           <div class="col-tablet-up-8">
                             <input type="tel" class="form-control" value="+7 (952) 252-51-66" placeholder="+7 (___) ___-__-__" required />
                           </div>
                         </label>
-                        <label class="form-item row">
+                      <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">E-mail:</span>
                           <div class="col-tablet-up-8">
                             <input type="email" class="form-control" placeholder="ivan-ivanov@mail.ru" required />
                           </div>
                         </label>
-                      </fieldset>
-                      <fieldset class="private-info-form__section">
-                        <!-- <label class="form-item row">
+                    </fieldset>
+                    <fieldset class="private-info-form__section">
+                      <!-- <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Область:</span>
                           <div class="col-tablet-up-8">
                             <input type="text" class="form-control" placeholder="Брянская" required />
                           </div>
                         </label> -->
-                        <!-- <label class="form-item row">
+                      <!-- <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Город:</span>
                           <div class="col-tablet-up-8">
                             <input type="text" class="form-control" placeholder="Брянск" required />
                           </div>
                         </label> -->
-                        <label class="form-item row">
+                      <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Адрес:</span>
                           <div class="col-tablet-up-8">
                             <input type="text" class="form-control" placeholder="ул. Нахимова, д. 14, офис 37" required />
                           </div>
                         </label>
-                      </fieldset>
-                      <fieldset class="private-info-form__section">
-                        <label class="form-item row">
+                    </fieldset>
+                    <fieldset class="private-info-form__section">
+                      <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Новый пароль:</span>
                           <div class="col-tablet-up-8">
                             <input type="password" class="form-control" required />
                           </div>
                         </label>
-                        <label class="form-item row">
+                      <label class="form-item row">
                           <span class="private-info-form__label form-label col-tablet-up-4">Подтверждение пароля:</span>
                           <div class="col-tablet-up-8">
                             <input type="password" class="form-control" required />
                           </div>
                         </label>
-                      </fieldset>
-                      <div class="private-info-form__submit-wrapper">
-                        <button class="private-info-form__submit button button--orange js-trigger-inline-popup" type="submit">Сохранить</button>
-                      </div>
-                    </form>
-                  </div>
+                    </fieldset>
+                    <div class="private-info-form__submit-wrapper">
+                      <button class="private-info-form__submit button button--orange js-trigger-inline-popup" type="submit">Сохранить</button>
+                    </div>
+                  </form>
                 </div>
-                <div class="tabs__pane" id='tab-history-orders'>
-                  <!-- <h2>История заказов</h2> -->
-                  <table class="history-orders-table">
-                    <thead>
-                      <tr>
-                        <th class="text-left">№</th>
-                        <th class="text-left">Статус</th>
-                        <th class="text-left">Дата</th>
-                        <th class="text-right">Сумма</th>
-                        <th class="text-center">Подробнее</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="history-orders-table__serial">000004</td>
-                        <td class="history-orders-table__status">
-                          <span class="label label--warning">В обработке</span>
-                        </td>
-                        <td class="history-orders-table__date">12.04.2017 17:30</td>
-                        <td class="history-orders-table__cost">15 000.00 р.</td>
-                        <td class="history-orders-table__more">
-                          <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="history-orders-table__serial">000003</td>
-                        <td class="history-orders-table__status">
-                          <span class="label label--info">В обработке</span>
-                        </td>
-                        <td class="history-orders-table__date">12.04.2017 17:30</td>
-                        <td class="history-orders-table__cost">15 000.00 р.</td>
-                        <td class="history-orders-table__more">
-                          <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="history-orders-table__serial">000002</td>
-                        <td class="history-orders-table__status">
-                          <span class="label label--danger">Заказ отменен</span>
-                        </td>
-                        <td class="history-orders-table__date">11.04.2017 9:30</td>
-                        <td class="history-orders-table__cost">300 000.00 р.</td>
-                        <td class="history-orders-table__more">
-                          <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="history-orders-table__serial">000001</td>
-                        <td class="history-orders-table__status">
-                          <span class="label label--success">Выполнен</span>
-                        </td>
-                        <td class="history-orders-table__date">30.03.2017 15:00</td>
-                        <td class="history-orders-table__cost">1 200 000.00 р</td>
-                        <td class="history-orders-table__more">
-                          <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              </div>
+              <div class="tabs__pane" id='tab-history-orders'>
+                <!-- <h2>История заказов</h2> -->
+                <table class="history-orders-table response-table">
+                  <thead>
+                    <tr>
+                      <th class="text-left">№</th>
+                      <th class="text-left">Статус</th>
+                      <th class="text-left">Дата</th>
+                      <th class="text-right">Сумма</th>
+                      <th class="text-center">Подробнее</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="history-orders-table__serial" data-th="№">000004</td>
+                      <td class="history-orders-table__status" data-th="Статус">
+                        <span class="label label--warning">В обработке</span>
+                      </td>
+                      <td class="history-orders-table__date" data-th="Дата">12.04.2017 17:30</td>
+                      <td class="history-orders-table__cost" data-th="Сумма">15 000.00 р.</td>
+                      <td class="history-orders-table__more" data-th="Подробнее">
+                        <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="history-orders-table__serial" data-th="№">000003</td>
+                      <td class="history-orders-table__status" data-th="Статус">
+                        <span class="label label--info">В обработке</span>
+                      </td>
+                      <td class="history-orders-table__date" data-th="Дата">12.04.2017 17:30</td>
+                      <td class="history-orders-table__cost" data-th="Сумма">15 000.00 р.</td>
+                      <td class="history-orders-table__more" data-th="Подробнее">
+                        <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="history-orders-table__serial" data-th="№">000002</td>
+                      <td class="history-orders-table__status" data-th="Статус">
+                        <span class="label label--danger">Заказ отменен</span>
+                      </td>
+                      <td class="history-orders-table__date" data-th="Дата">11.04.2017 9:30</td>
+                      <td class="history-orders-table__cost" data-th="Сумма">300 000.00 р.</td>
+                      <td class="history-orders-table__more" data-th="Подробнее">
+                        <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="history-orders-table__serial" data-th="№">000001</td>
+                      <td class="history-orders-table__status" data-th="Статус">
+                        <span class="label label--success">Выполнен</span>
+                      </td>
+                      <td class="history-orders-table__date" data-th="Дата">30.03.2017 15:00</td>
+                      <td class="history-orders-table__cost" data-th="Сумма">1 200 000.00 р</td>
+                      <td class="history-orders-table__more" data-th="Подробнее">
+                        <a class="js-trigger-inline-popup" href="#popup-details-order">Подробнее</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
-      </main>
-    </div>
-    @@include('blocks/site-footer.html')
-    @@include('blocks/popup-details-order.html')
-  </body>
-  </html>
+      </div>
+    </main>
+  </div>
+  @@include('blocks/site-footer.html') @@include('blocks/popup-details-order.html')
+</body>
+
+</html>

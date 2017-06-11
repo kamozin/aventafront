@@ -1,4 +1,7 @@
 .sort-filter {
+  @include make-box();
+
+  margin-bottom: ($grid-gutter * 3px);
   user-select: none;
 
   @media #{$mobile-up} {
@@ -48,7 +51,8 @@
   }
 
   &--active {
-    color: $base-color;
+    font-weight: 600;
+    color: $primary-color;
 
     &:hover,
     &:focus {
@@ -76,6 +80,10 @@
     transition: $duration;
   }
 
+  &.sort-filter__control--active::before  {
+    border-top-width: 2px;
+    border-right-width: 2px;
+  }
 
   &--asc {
 

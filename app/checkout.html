@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>Корзина</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="site-wrapper">
     @@include('blocks/site-header.html')
@@ -89,51 +91,52 @@
                         <div class="col-tablet-up-7">
                           <textarea class="form-control" name="" id="" rows="5" placeholder="Время доставки с 18:00"></textarea></div>
                         </label>
-                      </fieldset>
-                      <div class="form-item">
-                        <label class="checkout-form__checkbox custom-checkbox">
+                    </fieldset>
+                    <div class="form-item">
+                      <label class="checkout-form__checkbox custom-checkbox">
                           <input type="checkbox" name="" id="" checked required />
                           <span class="custom-checkbox__indicator"></span>
                           <span class="custom-checkbox__text">Я соглашаюсь с условиями политики конфиденциальности компании</span>
                         </label>
-                      </div>
-                      <div class="checkout-form__submit-wrapper">
-                        <button class="checkout-form__submit button button--orange" type="submit">Оформить заказ</button>
-                      </div>
-                    </form>
-                  </div>
+                    </div>
+                    <div class="checkout-form__submit-wrapper">
+                      <button class="checkout-form__submit button button--orange" type="submit">Оформить заказ</button>
+                    </div>
+                  </form>
                 </div>
-                <div class="col-tablet-up-5">
-                  <div class="page-block">
-                    <h2 class="checkout__block-title">Ваш заказ</h2>
-                    <table class="checkout__summary">
-                      <tbody>
-                        <tr class="checkout__summary-item">
-                          <td class="checkout__summary-field">Товаров в корзине:</td>
-                          <td class="checkout__summary-value">3</td>
-                        </tr>
-                        <tr class="checkout__summary-item">
-                          <td class="checkout__summary-field">Доставка: Самовывоз</td>
-                          <td class="checkout__summary-value">0 р.</td>
-                        </tr>
-                        <tr class="checkout__summary-item">
-                          <td class="checkout__summary-field">Скидка:</td>
-                          <td class="checkout__summary-value">3 843.19 р.</td>
-                        </tr>
-                        <tr class="checkout__summary-item checkout__summary-item--primary">
-                          <td class="checkout__summary-field">Итого:</td>
-                          <td class="checkout__summary-value">48 039.94 р.</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+              </div>
+              <div class="col-tablet-up-5">
+                <div class="page-block">
+                  <h2 class="checkout__block-title">Ваш заказ</h2>
+                  <table class="checkout__summary">
+                    <tbody>
+                      <tr class="checkout__summary-item">
+                        <td class="checkout__summary-field">Товаров в корзине:</td>
+                        <td class="checkout__summary-value">3</td>
+                      </tr>
+                      <tr class="checkout__summary-item">
+                        <td class="checkout__summary-field">Доставка: Самовывоз</td>
+                        <td class="checkout__summary-value">0 р.</td>
+                      </tr>
+                      <tr class="checkout__summary-item">
+                        <td class="checkout__summary-field">Скидка:</td>
+                        <td class="checkout__summary-value">3 843.19 р.</td>
+                      </tr>
+                      <tr class="checkout__summary-item checkout__summary-item--primary">
+                        <td class="checkout__summary-field">Итого:</td>
+                        <td class="checkout__summary-value">48 039.94 р.</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </main>
-    </div>
-    @@include('blocks/site-footer.html')
-  </body>
-  </html>
+      </div>
+    </main>
+  </div>
+  @@include('blocks/site-footer.html')
+</body>
+
+</html>

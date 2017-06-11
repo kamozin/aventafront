@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,13 @@
   <title>Корзина</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="site-wrapper">
     @@include('blocks/site-header.html')
     <!-- main--overlay — показывает оверлей при наведении на main-nav__list -->
     <main class="main">
       <div class="main__container">
-        <div class="sidebar-area">
-          <div class="sidebar">
-            <div class="sidebar__module">
-              @@include('blocks/main-nav.html')
-            </div>
-          </div>
-        </div>
         <div class="content-area">
           <div class="content">
             <h1 class="page-title">Корзина (<span class="js-cart-counter">3</span>)</h1>
@@ -42,78 +37,87 @@
                       <td class="cart__item-image">
                         <img src="//placehold.it/100x75/f93/fff" alt="" />
                       </td>
-                      <td class="cart__item-title">
+                      <td class="cart__item-title" data-th="Продукт">
                         Счетчик Меркурий (Инкотекс) 201.7 5-60А, 1 кл. точн., 230В, дин.рейка
                       </td>
-                      <td class="cart__item-counter">
+                      <td class="cart__item-counter" data-th="Количество">
                         <div class="counter">
                           <button class="counter__control counter__control--down" type="button">&#8722;</button>
                           <input class="counter__input" type="number" name="" id="" value="1" />
                           <button class="counter__control counter__control--up" type="button">+</button>
                         </div>
                       </td>
-                      <td class="cart__item-price">
+                      <td class="cart__item-price" data-th="Цена">
                         2 655.80 р.
                       </td>
-                      <td class="cart__item-summary-price">
+                      <td class="cart__item-summary-price" data-th="Сумма">
                         2 655.80 р.
                       </td>
-                      <td class="cart__item-delete">
-                        <button class="cart__item-delete-button" type="button" title="Удалить из корзины">×</button>
+                      <td class="cart__item-delete" data-th="Действие">
+                        <button class="cart__item-delete-button" type="button" title="Удалить из корзины">
+                          <span class="cart__item-delete-button-icon">×</span>
+                          <span class="cart__item-delete-button-text">Удалить</span>
+                        </button>
                       </td>
                     </tr>
                     <tr class="cart__item">
                       <td class="cart__item-image">
                         <img src="//placehold.it/650x440/94d/fff" alt="" />
                       </td>
-                      <td class="cart__item-title">
+                      <td class="cart__item-title" data-th="Продукт">
                         Лампа светодиодная ASD LED-A60-standard 11Вт 160-260В Е27 3000К...
                       </td>
-                      <td class="cart__item-counter">
+                      <td class="cart__item-counter" data-th="Количество">
                         <div class="counter">
                           <button class="counter__control counter__control--down" type="button">&#8722;</button>
                           <input class="counter__input" type="number" name="" id="" value="1" />
                           <button class="counter__control counter__control--up" type="button">+</button>
                         </div>
                       </td>
-                      <td class="cart__item-price">
+                      <td class="cart__item-price" data-th="Цена">
                         70.54 р.
                       </td>
-                      <td class="cart__item-summary-price">
+                      <td class="cart__item-summary-price" data-th="Сумма">
                         70.54 р.
                       </td>
-                      <td class="cart__item-delete">
-                        <button class="cart__item-delete-button" type="button" title="Удалить из корзины">×</button>
+                      <td class="cart__item-delete" data-th="Действие">
+                        <button class="cart__item-delete-button" type="button" title="Удалить из корзины">
+                          <span class="cart__item-delete-button-icon">×</span>
+                          <span class="cart__item-delete-button-text">Удалить</span>
+                        </button>
                       </td>
                     </tr>
                     <tr class="cart__item">
                       <td class="cart__item-image">
                         <img src="//placehold.it/100x75/3fd/fff" alt="" />
                       </td>
-                      <td class="cart__item-title">
+                      <td class="cart__item-title" data-th="Продукт">
                         Электродвигатель 4ВР 100 Л2
                       </td>
-                      <td class="cart__item-counter">
+                      <td class="cart__item-counter" data-th="Количество">
                         <div class="counter">
                           <button class="counter__control counter__control--down" type="button">&#8722;</button>
                           <input class="counter__input" type="number" name="" id="" value="2" />
                           <button class="counter__control counter__control--up" type="button">+</button>
                         </div>
                       </td>
-                      <td class="cart__item-price">
+                      <td class="cart__item-price" data-th="Цена">
                         22 655.80 р.
                       </td>
-                      <td class="cart__item-summary-price">
+                      <td class="cart__item-summary-price" data-th="Сумма">
                         45 313.60 р.
                       </td>
-                      <td class="cart__item-delete">
-                        <button class="cart__item-delete-button" type="button" title="Удалить из корзины">×</button>
+                      <td class="cart__item-delete" data-th="Действие">
+                        <button class="cart__item-delete-button" type="button" title="Удалить из корзины">
+                          <span class="cart__item-delete-button-icon">×</span>
+                          <span class="cart__item-delete-button-text">Удалить</span>
+                        </button>
                       </td>
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr>
-                      <td colspan="3">
+                      <td class="cart__discount-holder" colspan="3">
                         <div class="cart__discount">
                           <img class="cart__discount-image" src="//placehold.it/75x75/9fd" alt="" />
                           <input type="text" class="cart__discount-input form-control" placeholder="Введите номер дисконтной карты" />
@@ -141,9 +145,17 @@
             </div>
           </div>
         </div>
+        <div class="sidebar-area">
+          <div class="sidebar">
+            <div class="sidebar__module">
+              @@include('blocks/catalog-nav.html')
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
   @@include('blocks/site-footer.html')
 </body>
+
 </html>

@@ -1,8 +1,7 @@
 .site-footer {
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #fff;
-  background-color: $secondary-color;
+  background-color: #fff;
 }
 
 .site-footer__inner {
@@ -33,10 +32,6 @@
   @media #{$tablet-up} {
     display: block;
   }
-}
-
-.site-footer__top-nav {
-
 }
 
 .site-footer__copy {

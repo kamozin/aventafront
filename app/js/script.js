@@ -1,51 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
   var body = document.body;
   var contentArea = document.querySelector('.content-area');
   var main = document.querySelector('.main');
-  var mainNav = document.querySelector('.main-nav');
+  var catalogNav = document.querySelector('.catalog-nav');
 
-  function toggleMainNavOverlay(event) {
-    if (mainNav.classList.contains('main-nav--opened')) {
+  function togglecatalogNavOverlay(event) {
+    if (catalogNav.classList.contains('catalog-nav--opened')) {
       main.classList.toggle('main--overlay');
     }
   }
 
-  function setContentAreaHeight(mainNavList, contentArea) {
-    var mainNavListHeight = mainNavList.offsetHeight;
-    contentArea.style.minHeight = mainNavListHeight + 'px';
+  function setContentAreaHeight(catalogNavList, contentArea) {
+    var catalogNavListHeight = catalogNavList.offsetHeight;
+    contentArea.style.minHeight = catalogNavListHeight + 'px';
   }
 
-  if (mainNav) {
+  if (catalogNav) {
     if ((matchMedia('(min-width: 768px)').matches)) {
       // Desktop menu
-      var mainNavToogle = mainNav.querySelector('.main-nav__toggle');
-      var mainNavList = mainNav.querySelector('.main-nav__list');
+      var catalogNavToogle = catalogNav.querySelector('.catalog-nav__toggle');
+      var catalogNavList = catalogNav.querySelector('.catalog-nav__list');
 
-      setContentAreaHeight(mainNavList, contentArea);
+      setContentAreaHeight(catalogNavList, contentArea);
 
-      mainNavToogle.addEventListener('click', function(event) {
+      catalogNavToogle.addEventListener('click', function (event) {
         event.preventDefault();
       });
 
       if (body.classList.contains('homepage')) {
-        mainNav.classList.toggle('main-nav--opened');
-        mainNavToogle.classList.toggle('is-active');
+        catalogNav.classList.toggle('catalog-nav--opened');
+        catalogNavToogle.classList.toggle('is-active');
       } else {
-        mainNavToogle.addEventListener('click', function(event) {
-          mainNav.classList.toggle('main-nav--opened');
+        catalogNavToogle.addEventListener('click', function (event) {
+          catalogNav.classList.toggle('catalog-nav--opened');
           main.classList.toggle('main--overlay');
-          mainNavToogle.classList.toggle('is-active');
+          catalogNavToogle.classList.toggle('is-active');
         });
       }
 
-      mainNav.addEventListener('mouseover', toggleMainNavOverlay);
-      mainNav.addEventListener('mouseout', toggleMainNavOverlay);
+      catalogNav.addEventListener('mouseover', togglecatalogNavOverlay);
+      catalogNav.addEventListener('mouseout', togglecatalogNavOverlay);
 
     } else {
       // Mobile menu
-      $('.main-nav__wrapper').mmenu({
+      $('.catalog-nav__wrapper').mmenu({
         navbar: {
           title: "Каталог продукции"
         }
@@ -63,6 +63,68 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+  $(window).on('resize', function () {
+    productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
+    $productCard.each(recalculateProductCardHeight);
+  });
+
+  function recalculateProductCardHeight() {
+    if ($(this).closest('.cards').not('.cards--not-affect').hasClass('cards--mode-list') && matchMedia('(min-width: 992px)').matches) {
+      return;
+    }
+    $(this).height(productCardHeight);
+  }
+
+  function resetProductCardHeight() {
+    $(this).height('auto');
+  }
+
+
+  /*=====  End of Product cards height  ======*/
+
+
+  /*=================================================
+  =            Layout mode product cards            =
+  =================================================*/
+
+  var $cards = $('.cards');
+  var $productCard = $('.product-card');
+  var layoutProductCards = localStorage.getItem('layoutProductCards');
+  var $catalogMode = $('.catalog-mode');
+  var $catalogModeItems = $('.catalog-mode__item');
+  var productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
+
+  $catalogMode.on('click', '.catalog-mode__item', function (event) {
+    event.preventDefault();
+    $catalogModeItems.removeClass('catalog-mode__item--active');
+    $(this).addClass('catalog-mode__item--active');
+    var layoutProductCards = this.dataset.layoutMode;
+    localStorage.setItem('layoutProductCards', layoutProductCards);
+    $cards.not('.cards--not-affect').attr('class', 'cards cards--mode-' + layoutProductCards);
+    if (layoutProductCards === 'tile') {
+      $productCard.each(recalculateProductCardHeight);
+    } else {
+      $productCard.each(resetProductCardHeight);
+    }
+  });
+
+
+  if (!layoutProductCards || layoutProductCards === 'tile') {
+    $cards.not('.cards--not-affect').attr('class', 'cards');
+    $catalogModeItems.filter('[data-layout-mode="tile"]').addClass('catalog-mode__item--active');
+  } else {
+    $cards.not('.cards--not-affect').attr('class', 'cards cards--mode-' + layoutProductCards);
+    $catalogModeItems.filter('[data-layout-mode="' + layoutProductCards + '"]').addClass('catalog-mode__item--active');
+  }
+
+  $productCard.each(recalculateProductCardHeight);
+
+  /*=====  End of Layout mode product cards  ======*/
+
+
+
+
   /*============================
   =            Tabs            =
   ============================*/
@@ -77,18 +139,18 @@ document.addEventListener('DOMContentLoaded', function() {
   =            Product button            =
   ======================================*/
 
-  var $cards = $('.cards');
+  // var $cards = $('.cards');
 
-  $cards.on('click', '.product-card__button', function(event) {
+  $cards.on('click', '.product-card__button', function (event) {
     event.preventDefault();
     var $self = $(this);
     var $productCard = $(this).closest('.product-card');
-    var $productCardButtonLabel = $(this).find('.product-card__button-label')
+    // var $productCardButtonLabel = $(this).find('.product-card__button-label')
     var $productCardCounter = $productCard.find('.counter__input');
     var $productCardControls = $productCard.find('.counter__control');
 
     $self.removeClass('button--orange');
-    $productCardButtonLabel.text('Перейти в корзину');
+    $(this).text('Перейти в корзину');
 
     $productCardCounter.prop('readonly', true);
     $productCardControls.prop('disabled', true);
@@ -98,28 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  /*============================================
-  =            Product cards height            =
-  ============================================*/
-
-  var $productCard = $('.product-card');
-  var productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
-
-  $productCard.each(recalculateProductCardHeight);
-
-  $(window).on('resize', function() {
-    productCardHeight = Math.ceil($productCard.eq(0).find('.product-card__inner').outerHeight());
-    $productCard.each(recalculateProductCardHeight);
-  });
-
-  function recalculateProductCardHeight() {
-    if ($(this).closest('.cards').hasClass('cards--mode-list') && matchMedia('(min-width: 992px)').matches) {
-      return
-    }
-    $(this).height(productCardHeight);
-  }
-
-  /*=====  End of Product cards height  ======*/
 
 
 
@@ -131,7 +171,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if ($catalogFilter.length) {
     $catalogFilter.collapse({
-      query: ".catalog-filter__caption"
+      query: ".catalog-filter__caption",
+      open: function () {
+        this.slideDown(300);
+      },
+      close: function () {
+        this.slideUp(300);
+      },
     });
   }
 
@@ -139,48 +185,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-/*===========================================
-=            Filter range slider            =
-===========================================*/
+  /*===========================================
+  =            Filter range slider            =
+  ===========================================*/
 
-var filterIntervalItems = document.querySelectorAll('.filter-interval');
+  var filterIntervalItems = document.querySelectorAll('.filter-interval');
 
-if (filterIntervalItems.length) {
-  Array.prototype.forEach.call(filterIntervalItems, function(filterInterval) {
-    var slider = filterInterval.querySelector('.filter-interval__slider');
-    var inputMin = filterInterval.querySelector('.filter-interval__input--min');
-    var inputMax = filterInterval.querySelector('.filter-interval__input--max');
-    var inputs = [inputMin, inputMax];
+  if (filterIntervalItems.length) {
+    Array.prototype.forEach.call(filterIntervalItems, function (filterInterval) {
+      var slider = filterInterval.querySelector('.filter-interval__slider');
+      var inputMin = filterInterval.querySelector('.filter-interval__input--min');
+      var inputMax = filterInterval.querySelector('.filter-interval__input--max');
+      var inputs = [inputMin, inputMax];
 
-    function setSliderHandle(i, value) {
-      var r = [null,null];
-      r[i] = value;
-      slider.noUiSlider.set(r);
-    }
-
-    noUiSlider.create(slider, {
-      start: [inputMin.value, inputMax.value],
-      connect: true,
-      range: {
-        'min': parseFloat(inputMin.value),
-        'max': parseFloat(inputMax.value)
+      function setSliderHandle(i, value) {
+        var r = [null, null];
+        r[i] = value;
+        slider.noUiSlider.set(r);
       }
-    });
 
-    slider.noUiSlider.on('update', function(values, handle) {
-      inputs[handle].value = values[handle];
-    });
+      noUiSlider.create(slider, {
+        start: [inputMin.value, inputMax.value],
+        connect: true,
+        range: {
+          'min': parseFloat(inputMin.value),
+          'max': parseFloat(inputMax.value)
+        }
+      });
 
-    inputs.forEach(function(input, handle) {
-      input.addEventListener('change', function(){
-        setSliderHandle(handle, this.value);
-        // slider.noUiSlider.set([null, this.value]);
+      slider.noUiSlider.on('update', function (values, handle) {
+        inputs[handle].value = values[handle];
+      });
+
+      inputs.forEach(function (input, handle) {
+        input.addEventListener('change', function () {
+          setSliderHandle(handle, this.value);
+          // slider.noUiSlider.set([null, this.value]);
+        });
       });
     });
-  });
-}
+  }
 
-/*=====  End of Filter range slider  ======*/
+  /*=====  End of Filter range slider  ======*/
 
 
 

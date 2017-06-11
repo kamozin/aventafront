@@ -12,12 +12,13 @@
   padding: ($grid-gutter * 1.5px);
   background-color: #fff;
   border-radius: $border-radius;
-  color: $muted-color;
+  // color: $muted-color;
   transition: $duration;
+  box-shadow: 0 1px 1px rgba(#000, 0.1);
 
   &:hover,
   &:focus {
-    box-shadow: 0 3px 6px rgba(#000, 0.2);
+    box-shadow: 0 3px 6px rgba(#000, 0.3);
     color: $accent-color;
     // color: $primary-color;
   }
@@ -29,7 +30,9 @@
   background-color: $color-grey-235;
   margin-bottom: ($grid-gutter * 1px);
   font-size: $font-size--small;
-  color: $light-color;
+  font-family: 'Open Sans Condensed', sans-serif;
+  // color: $light-color;
+  letter-spacing: 0.05em;
   color: $muted-color;
   vertical-align: middle;
   transition: $duration;
@@ -37,7 +40,7 @@
 
 .category__item:hover .category-item__number,
 .category__item:focus .category-item__number {
-  color: $muted-color;
+  // color: $muted-color;
 }
 
 .category-item__title {
@@ -45,5 +48,4 @@
   margin: 0;
   // font-weight: 600;
   font-size: $font-size--large;
-  // font-family: 'Open Sans Condensed', sans-serif;
 }

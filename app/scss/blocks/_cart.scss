@@ -5,12 +5,6 @@
 .cart__items {
   margin-bottom: 0;
 
-  thead {
-    th {
-      // font-family: 'Open Sans Condensed', sans-serif;
-    }
-  }
-
   th,
   td {
     padding: ($grid-gutter * 1px);
@@ -23,22 +17,78 @@
       padding-right: 0;
     }
   }
+
+  thead {
+    th {
+      @media (max-width: 568px) {
+        position: absolute;
+
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+      }
+    }
+  }
+
+  @media (max-width: 568px) {
+    tbody {
+
+      tr {
+        border-top: 4px solid $color-grey-224;
+        border-bottom: 4px solid $color-grey-224;
+      }
+
+      td {
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: attr(data-th)': ';
+          display: block;
+          width: 82px;
+          flex-shrink: 0;
+          font-weight: 600;
+          font-size: $font-size--small;
+          font-family: 'Open Sans Condensed', sans-serif;
+          text-align: left;
+        }
+      }
+    }
+
+  }
+
 }
 
 .cart__item-label-image {
-  // display: none;
+
+  @media (max-width: 568px) {
+    display: none !important;
+  }
 }
 
 .cart__item-image {
-  // display: none;
   min-width: 75px;
   max-width: 100px;
+
+  @media (max-width: 568px) {
+    display: none !important;
+  }
 }
 
 .cart__item-title {
   max-width: 320px;
   font-weight: 600;
   font-family: 'Open Sans Condensed', sans-serif;
+
+  @media (max-width: 568px) {
+    max-width: none;
+  }
 }
 
 .cart__item-price {
@@ -67,7 +117,6 @@
   padding: 1px 5px;
   line-height: 1;
   color: $light-color;
-  font-size: 22px;
   background-color: transparent;
 }
 
@@ -77,6 +126,24 @@
   &:hover,
   &:focus {
     color: $base-color;
+  }
+}
+
+.cart__item-delete-button-icon {
+  font-size: 22px;
+}
+
+.cart__item-delete-button-text {
+  margin-left: 0.5em;
+
+  @media #{$mobile-up} {
+    display: none;
+  }
+}
+
+.cart__discount-holder {
+  @media (max-width: 568px) {
+    display: none;
   }
 }
 
