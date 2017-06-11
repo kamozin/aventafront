@@ -145,12 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
     var $self = $(this);
     var $productCard = $(this).closest('.product-card');
-    var $productCardButtonLabel = $(this).find('.product-card__button-label')
+    // var $productCardButtonLabel = $(this).find('.product-card__button-label')
     var $productCardCounter = $productCard.find('.counter__input');
     var $productCardControls = $productCard.find('.counter__control');
 
     $self.removeClass('button--orange');
-    $productCardButtonLabel.text('Перейти в корзину');
+    $(this).text('Перейти в корзину');
 
     $productCardCounter.prop('readonly', true);
     $productCardControls.prop('disabled', true);
